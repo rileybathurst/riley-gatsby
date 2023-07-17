@@ -21,7 +21,17 @@ const config: GatsbyConfig = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        // syntax: 'postcss-scss',
+        postCssPlugins: [
+          require(`postcss-import`),
+          require("autoprefixer"),
+          require("postcss-nested"),
+        ],
+      },
+    },
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",

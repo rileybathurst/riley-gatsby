@@ -1,0 +1,26 @@
+// Search
+
+.searchform [type="text"] {
+  // .post-password-form [type="password"]
+  border: 0.1em solid var(--tin-soldier);
+  border-right: none;
+  font-size: 2em; // type scale
+  font-weight: bold;
+  // TODO padding: 1rem/2; // fit to the button
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+
+  width: 100%; // max-width wasn't fixing the problem
+  @media (min-width: $stork) {
+    width: auto;
+  }
+}
+
+.searchform [type="text"]:focus {
+  outline: 0.1em solid var(--cherry);
+}
+
+.searchform [type="submit"],
+#commentform [type="submit"] {
+  @extend button;
+}

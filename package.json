@@ -2,8 +2,13 @@
   "name": "riley-gatsby",
   "version": "1.0.0",
   "private": true,
-  "description": "riley-gatsby",
-  "author": "Riley",
+  "description": "Riley Bathurst portfolio site",
+  "author": {
+    "name": "Riley",
+    "email": "riley@rileybathurst.com",
+    "url": "https://rileybathurst.com"
+  },
+  "repository": "github:rileybathurst/riley-gatsby",
   "keywords": [
     "gatsby"
   ],
@@ -25,7 +30,6 @@
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-source-sanity": "^7.6.3",
     "gatsby-transformer-sharp": "^5.11.0",
-    "postcss": "^8.4.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -33,6 +37,9 @@
     "@types/node": "^20.3.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "postcss": "^8.4.24",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
     "typescript": "^5.1.3"
   }
 }
