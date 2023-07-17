@@ -1,48 +1,47 @@
-const { createFilePath } = require(`gatsby-source-filesystem`)
+/* const { createFilePath } = require(`gatsby-source-filesystem`);
 
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#onCreateNode
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
+    });
   }
-}
+};
 
-const path = require("path")
+const path = require("path");
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   const result = await graphql(`
     {
-      allStrapiBlog(
-        sort: {updatedAt: DESC}
-        limit: 1000
-      ) {
+      allSanityBlog(sort: { _updatedAt: DESC }, limit: 1000) {
         edges {
           node {
-            slug
+            slug {
+              current
+            }
           }
         }
       }
     }
-  `)
+  `);
 
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
   }
 
   // Create blog-list pages with pagination
   // https://github.com/NickyMeuleman/gatsby-paginated-blog/blob/master/gatsby-node.js
-  const posts = result.data.allStrapiBlog.edges
-  const postsPerPage = 10
-  const numPages = Math.ceil(posts.length / postsPerPage)
+  const posts = result.data.allSanityBlog.edges;
+  const postsPerPage = 10;
+  const numPages = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
@@ -53,75 +52,77 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         numPages,
         currentPage: i + 1,
       },
-    })
-  })
+    });
+  });
 
-  const blogView = path.resolve(`src/templates/blog-view.tsx`)
+  const blogView = path.resolve(`src/templates/blog-view.tsx`);
   const blogResult = await graphql(`
     query {
-      allStrapiBlog {
+      allSanityBlog {
         edges {
           node {
-            slug
+            slug {
+              current
+            }
           }
           next {
-            slug
+            slug {
+              current
+            }
           }
           previous {
-            slug
+            slug {
+              current
+            }
           }
         }
       }
     }
-  `)
-
-  // console.log(blogResult.data.allStrapiBlog.edges);
+  `);
 
   // I dont know how to run optionals here so I'll skip that with queries
-  blogResult.data.allStrapiBlog.edges.forEach(({ node, next, previous }) => {
-
+  blogResult.data.allSanityBlog.edges.forEach(({ node, next, previous }) => {
     if (next && previous) {
       createPage({
         path: `/blog/${node.slug}`,
         component: blogView,
         context: {
-          slug: node.slug,
-          next: next.slug,
-          previous: previous.slug,
+          slug: node.slug.current,
+          next: next.slug.current,
+          previous: previous.slug.current,
         },
-      })
+      });
     } else if (next) {
       createPage({
-        path: `/blog/${node.slug}`,
+        path: `/blog/${node.slug.current}`,
         component: blogView,
         context: {
-          slug: node.slug,
+          slug: node.slug.current,
           previous: null,
-          next: next.slug,
+          next: next.slug.current,
         },
-      })
+      });
     } else if (previous) {
-
       createPage({
-        path: `/blog/${node.slug}`,
+        path: `/blog/${node.slug.current}`,
         component: blogView,
         context: {
           slug: node.slug,
-          previous: previous.slug,
+          previous: previous.slug.current,
           next: null,
         },
-      })
+      });
     } else {
       createPage({
-        path: `/blog/${node.slug}`,
+        path: `/blog/${node.slug.current}`,
         component: blogView,
         context: {
-          slug: node.slug,
+          slug: node.slug.current,
           previous: null,
           next: null,
         },
-      })
+      });
     }
-  })
-
-}
+  });
+};
+ */
