@@ -1,5 +1,6 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 const pageStyles = {
   color: "#232129",
@@ -137,8 +138,27 @@ const links = [
 ]
 
 const IndexPage: React.FC<PageProps> = () => {
+
+  const { allSanityBlog } = useStaticQuery(graphql`
+  query SanityQuery {
+    allSanityBlog {
+      nodes {
+        id
+        title
+      }
+    }
+  }
+`)
+
   return (
     <main style={pageStyles}>
+
+      {allSanityBlog.nodes.map((project) => (
+        <div key={project.id}>
+          {project.title}
+        </div>
+      ))}
+
       <h1 style={headingStyles}>
         Congratulations
         <br />
