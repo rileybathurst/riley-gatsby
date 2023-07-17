@@ -33,10 +33,11 @@ html {
 body {
   font-family: var(--body-font-family);
 }
-// type scale
+/* type scale */
 
 p {
-  margin-top: 0; // browser reset
+  /* browser reset */
+  margin-top: 0;
   margin-bottom: var(--baseline);
 }
 
@@ -45,46 +46,48 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 2.75rem 0 1rem; // TODO
-  line-height: 1.15; // TODO
+  /* TODO */
+  margin: 2.75rem 0 1rem;
+  line-height: 1.15;
 }
 
 h1 {
   margin-top: 0;
-  font-size: 3.052em; // 48px
+  font-size: 3.052em; /* 48px */
 }
 
 h2 {
-  font-size: 2.441em;
-} // 39px
+  font-size: 2.441em; /* 39px */
+}
 
 h3 {
-  font-size: 1.953em;
-} // 31.2px
+  font-size: 1.953em; /* 31.2px */
+}
 
 h4 {
-  font-size: 1.563em;
-} // 25px
+  font-size: 1.563em; /* 25px */
+}
 
 h5 {
-  font-size: 1.25em;
-} // 20px
+  font-size: 1.25em; /* 20px */
+} // 
 
 small,
 .text_small {
-  font-size: 0.8em;
-} // 12.8px
+  font-size: 0.8em; /* 12.8px */
+}
 
 li {
   margin-bottom: 1rem;
 }
 
 address {
-  font-style: unset; // revert from browser styles currently used in the footer
+  /* revert from browser styles currently used in the footer */
+  font-style: unset;
 }
 
 .text-center {
-  // foundation style pulled over // I think wp has one of these already tho
+  /* foundation style pulled over // I think wp has one of these already tho */
   text-align: center;
 }
 
@@ -114,30 +117,36 @@ hr {
 
 .is-style-mega-hr,
 .mega-hr {
-  // this might be able to become a gutenberg style in for most places
+  /* this might be able to become a gutenberg style in for most places */
   border-bottom-width: 0.5em;
   border-color: var(--brilliance);
 
   border-style: solid;
 
-  @media (min-width: $stork) {
+/*  
+TODO: variable
+@media (min-width: $stork) {
     border-bottom-width: 1em;
-  }
+  } */
 }
 
+/* 
+TODO: @extend was sass
 .is-style-mega-hr-primary,
 .mega-hr-primary {
   @extend .mega-hr;
   border-color: var(--cherry);
-}
+} */
 
+/* 
+TODO: @extend was sass
 .mega-hr-dirty {
   @extend .mega-hr;
   border-color: var(--kingly-cloud);
-}
+} */
 
 .mw-18em {
-  // this should be renamed
+  /* TODO: this should be renamed */
   max-width: 18rem;
   justify-self: center;
 }
@@ -149,31 +158,22 @@ figcaption,
   font-weight: bold;
 }
 
-/* doesnt come up in search
-.footer_menu a {
-    text-decoration: none;
-}
-*/
-
-/* doesnt come up in search
-.post-categories li {
-    margin-bottom: 0;
-}
-*/
-
 .comment-form input,
 .comment-form textarea {
   border: 0.1em solid var(--tin-soldier);
   font-weight: bold;
   padding: 1rem;
   border-radius: 2px;
+  /* feels like this should be 2.2em and is throwing errors on the post comment on a single page with a smaller width so should be more specific */
+  /* TODO: can this be done with box width whatever its called? I have a gist about it */
   width: calc(
     100% - 3em
-  ); // feels like this should be 2.2em and is throwing errors on the post comment on a single page with a smaller width so should be more specific
+  );
 }
 
 .comment-form input {
-  width: initial; // the text boxes can get smaller but the button hides the text if it gets smaller
+  /* the text boxes can get smaller but the button hides the text if it gets smaller */
+  width: initial;
 }
 
 .comment-form [type="checkbox"] {
@@ -187,19 +187,18 @@ figcaption,
 }
 
 .category-thumbnail img:hover {
-  opacity: 0.8; // indication of a link
+  /* indication of a link */
+  opacity: 0.8;
 }
 
 .wp-block-code {
-  // this is getting overwritten by js that isnt really doing much of what I want at the moment and needs fixing in riley-webpack
+  /* this is getting overwritten by js that isnt really doing much of what I want at the moment and needs fixing in riley-webpack */
   background: var(--brilliance);
   padding: 1rem;
   line-height: 1.5em;
 }
 
-.flatten
-// .flatten img
-{
+.flatten {
   transform: rotateX(90deg);
 }
 
@@ -218,24 +217,31 @@ figcaption,
 .show-for-medium {
   display: none;
 
-  @media (min-width: $stork) {
+/*
+TODO: @extend was sass
+@media (min-width: $stork) {
     display: inherit;
-  }
+  } */
 }
 
 .hide-for-medium {
-  @media (min-width: $stork) {
+/*  
+TODO: @extend was sass
+@media (min-width: $stork) {
     display: none;
-  }
+  } */
 }
 .hide-for-large {
-  @media (min-width: $pelican) {
+/*
+TODO: @extend was sass
+@media (min-width: $pelican) {
     display: none;
-  }
+  } */
 }
 
 iframe {
-  background: linen; // just a little fallback color incase an embed doesnt load
+  /* just a little fallback color incase an embed doesnt load */
+  background: linen;
 }
 
 .category-overlaying-image {
@@ -257,9 +263,11 @@ iframe {
   grid-column: 1/4;
   transition: 300ms ease;
 
+  /* 
+  TODO: @extend was sass
   @media (min-width: $stork) {
     grid-column: 2/5;
-  }
+  } */
 }
 
 .category-color-blocking:hover {
@@ -271,7 +279,7 @@ iframe {
 */
 
 body.category-code {
-  // needs to be on the body tag or a single article can be different to the page
+  /* needs to be on the body tag or a single article can be different to the page */
 
   .category-overlaying-image {
     filter: none;
@@ -305,7 +313,7 @@ body.category-code {
   }
 }
 
-// rebuilding this
+/* rebuilding this */
 .spine-border {
   background: var(--cherry);
   width: 1rem;
@@ -316,6 +324,7 @@ body.category-code {
 .hero-hr {
   width: 100%;
   border-bottom: 4px solid var(--cherry);
-  // I'll try this as a gradient soon
-  margin: 0; // Im using the grid gaps to push this where it needs to be
+  /* I'll try this as a gradient soon */
+  /* Im using the grid gaps to push this where it needs to be */
+  margin: 0;
 }

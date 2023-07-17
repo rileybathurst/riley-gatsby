@@ -14,17 +14,17 @@
 11.0 Featured Image Hover
 12.0 Navigation
 13.0 Layout
-   13.1 Header
-   13.2 Front Page
-   13.3 Regular Content
-   13.4 Posts
-   13.5 Pages
-   13.5.1 Photography Template
-   13.6 Footer
+  13.1 Header
+  13.2 Front Page
+  13.3 Regular Content
+  13.4 Posts
+  13.5 Pages
+  13.5.1 Photography Template
+  13.6 Footer
 14.0 Comments
 15.0 Widgets
 16.0 Media
-   16.1 Galleries
+  16.1 Galleries
 17.0 Customizer
 18.0 SVGs Fallbacks
 19.0 Media Queries
@@ -37,7 +37,7 @@ Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
 
 svg:not(:root) {
-  // thats a pretty strange selector is it right?
+  /* thats a pretty strange selector is it right? */
   overflow: hidden;
 }
 
@@ -56,13 +56,13 @@ svg:not(:root) {
 }
 
 .screen-reader-text:focus {
-  background-color: #f1f1f1; // would I just prefer to leave screen readers to do whatever they want and not mess with them?
-  -webkit-border-radius: 3px; // do I need this in scss?
+  /* would I just prefer to leave screen readers to do whatever they want and not mess with them? */
+  background-color: #f1f1f1;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); // do I need this in scss?
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  color: #21759b; // this should be changed to something like the theme
+  /* this should be changed to something like the theme */
+  color: #21759b;
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
@@ -101,8 +101,10 @@ svg:not(:root) {
 
 img.alignleft,
 .alignleft img {
-  margin-right: 1rem !important; // what is the !important over writting?
-  margin-left: 0 !important; // what is the !important over writting?
+  /* what is the !important over writting? */
+  margin-right: 1rem !important;
+  /* what is the !important over writting? */
+  margin-left: 0 !important;
 }
 
 .alignright {
@@ -112,7 +114,8 @@ img.alignleft,
 img.alignright,
 .alignright img {
   margin-left: 1rem;
-  margin-right: 0 !important; // what is the !important over writting?
+  /* what is the !important over writting? */
+  margin-right: 0 !important;
 }
 
 /*--------------------------------------------------------------
@@ -123,18 +126,12 @@ img.alignright,
 5.0 Typography
 --------------------------------------------------------------*/
 p {
-  @media (min-width: $pelican) {
-    text-align: justify;
-  }
-}
-
 /*
-.post > .article-content p {
-    display: block;
-    float: left; // Ive got problems with this so it needs documentation
-    clear: both; // Ive got problems with this
+TODO: media variables are sass
+@media (min-width: $pelican) {
+    text-align: justify;
+  } */
 }
-*/
 
 ::selection {
   background: var(--cherry); /* WebKit/Blink Browsers */
@@ -151,41 +148,44 @@ blockquote {
     color: var(--brilliance);
   }
 
-  font-size: 2rem; // type scale?
+  /* type scale? */
+  font-size: 2rem;
   font-weight: bold;
-  border-left: none; // ? I think this is a browser override?
+  /* ? I think this is a browser override? */
+  border-left: none;
 }
 
 blockquote:before {
-  content: "\201C "; // quotation mark
+  /* quotation mark */
+  content: "\201C ";
   font-family: var(--body-font-family);
   font-weight: bold;
-  font-size: 32px; // TODO hack this should be an em on the type scale
-  margin-right: 0.5rem; // why so small?
+  /* TODO hack this should be an em on the type scale */
+  font-size: 32px;
+  /* why so small? */
+  margin-right: 0.5rem;
 }
 
 blockquote p {
-  // display: inline; this was to have the quotes inline but it looses the margins so for now it's removed
-  font-size: 1.125em; // type scale?
+  /* type scale? */
+  font-size: 1.125em;
 }
 
 cite {
   color: gray;
   margin-left: 1rem;
   margin-bottom: 1rem * 1.5;
-  word-break: break-all; // I was having problems on small screens citing urls
-
+  /* I was having problems on small screens citing urls */
+  word-break: break-all;
+/* TODO: media variables are sass
   @media (min-width: $stork) {
     word-break: normal; // revert back when the small problem doesnt exsist
-  }
+  } */
 }
 
 .article-content .wp-block-code {
-  white-space: break-spaces; // stay at 100%
-}
-
-.spine {
-  // color: #575757; // TODO: darker than dark gray to pass contrast checks seems like something I should think about doing this everywhere
+  /* stay at 100% */
+  white-space: break-spaces;
 }
 
 .is-style-box-title,
@@ -196,7 +196,8 @@ cite {
 }
 
 .box-title a:hover {
-  text-decoration: line-through; // is this different to a regular hover?
+  /* is this different to a regular hover? */
+  text-decoration: line-through;
 }
 
 .pagination .prev,
@@ -214,34 +215,26 @@ cite {
 }
 
 .speechbubble {
-  /* display: block; // needed for the padding to be effective on a grid
-    color: var(--cherry);
-    padding: 1rem;
-    margin-top: -1rem;
-    border-bottom: 2px solid var(--cherry); // why not an em like other places? quite probably use a $global-border-weight
-    border-right: 2px solid var(--cherry);
-    border-bottom-right-radius: 3px; */
-
   font-weight: bold;
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     writing-mode: vertical-rl;
     margin-top: 1rem;
-  }
+  } */
 }
 
 .page-title {
-  // margin: 0;
-  font-size: 2em; // type scale?
-  // border: .2em solid var(--cherry);
+  /* type scale? */
+  font-size: 2em;
   justify-self: start;
-  // padding: 0.5em; // why half size?
-  // color: var(--cherry);
   word-wrap: break-word;
-  // text-align: center;
 
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     font-size: 3em;
-  }
+  } */
 }
 
 /*--------------------------------------------------------------
@@ -249,16 +242,20 @@ cite {
 --------------------------------------------------------------*/
 
 body {
-  // I think I can do this better just having everything sit inside a little
+  /* I think I can do this better just having everything sit inside a little */
   border: 0.25em solid var(--brilliance);
 
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     border: 0.5em solid var(--brilliance);
-  }
+  } */
 
-  @media (min-width: $pelican) {
+/*
+TODO: media variables are sass
+@media (min-width: $pelican) {
     border: 1em solid var(--brilliance);
-  }
+  } */
 
   @media (prefers-color-scheme: dark) {
     background: var(--black-metal);
@@ -283,51 +280,57 @@ body {
   background: var(--kingly-cloud);
 
   @media (prefers-color-scheme: dark) {
-    background: #2c2c2c; // TODO
+    /* TODO */
+    background: #2c2c2c;
   }
 }
 
 .background-double--dark {
-  background: #4a4a4a; // TODO
+  /* TODO */
+  background: #4a4a4a;
   border-bottom: 2px solid var(--black-metal);
   color: var(--brilliance);
 }
 
 .single-code {
-  @extend .background-double--dark;
+  /* TODO: @extend was sass */
+  /* @extend .background-double--dark; */
   padding: 1rem;
 }
 
 table {
-  // do I have any tables?
+  /* do I have any tables? */
   width: 100%;
 }
 
 .overlay {
-  // hack where is this?
+  /* hack where is this? */
   background: var(--cherry);
   z-index: 1;
-  grid-column: 11 / span 3; // this could be better
+  /* this could be better */
+  grid-column: 11 / span 3;
   grid-row: 1 / span 4;
-
+/* TODO: media variables are sass
   @media (min-width: $stork) {
     grid-column: 11 / span 3;
     grid-row: 1 / span 4;
-  }
+  } */
 }
 
 .page-title-2 {
-  // naming needs work
+  /* naming needs work */
   display: none;
 
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     display: block;
     color: var(--brilliance);
     writing-mode: vertical-rl;
     grid-column: 11 / span 2;
     grid-row: 1 / span 4;
     z-index: 99 !important; // what is this?
-  }
+  } */
 }
 
 /*--------------------------------------------------------------
@@ -357,71 +360,45 @@ a {
 a:hover {
   text-decoration: line-through;
   color: hsl(var(--cherry__base), var(--dull));
-
-  @media (prefers-color-scheme: dark) {
-    // color: lighten(var(--cherry), 10%); // TODO
-  }
 }
 
 .form-submit {
-  text-align: left !important; // why important?
+  /* why important? */
+  text-align: left !important;
 }
 
 button,
 .button {
-  // [type="submit"] removed for material
-  // margin: 0; /* bring the element back inline */
+  /* [type="submit"] removed for material */
   margin-bottom: 1rem;
-  // background: none !important; // why important?
   background: var(--cherry);
-  /* 	border-top: none !important;
-    border-left: none !important; */
   border: none;
-  // color: var(--cherry);
   color: var(--brilliance);
-  // border-color: var(--cherry) !important;
   font-weight: bold;
-  font-size: 1.5em; // type scale?
-  /* padding-right: 1rem; this was causing issues with hover looking strange but maybe I had done it or a reason?
-    padding-bottom: 1rem;
-    */
+  /* type scale? */
+  font-size: 1.5em;
   transition: var(--global-transition);
-  // // TODO padding: 1rem/2; // front page on 0 doesnt work
-  // TODO padding: 1rem/2 1rem; // front page on 0 doesnt work
-
   display: inline-block;
 
-  -webkit-appearance: none; // browser reset
+  /* browser reset */
+  -webkit-appearance: none;
 
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     font-size: 2em; // type scale?
-  }
+  } */
 }
 
 a.button {
-  // I dont love links as button they should be seperate things but for now
+  /* I dont love links as button they should be seperate things but for now */
   text-decoration: none;
 }
 
 button:hover,
 .button:hover {
-  // [type="submit"] removed for material
-  // background: var(--cherry) !important; // why important?
   background: hsl(var(--cherry__base), var(--dull));
-  // color: $white !important; // why important?
-  @media (prefers-color-scheme: dark) {
-    // background: lighten(var(--cherry), 10%); // TODO
-  }
-
-  // padding: 1rem; // this is on a transition so its interesting when just on the hover
 }
-
-/*
-.navigation-top a {
-    // color: var(--black-metal);
-    // text-decoration: underline;
-}
-*/
 
 .navigation-top a:hover {
   text-decoration: line-through;
@@ -432,45 +409,14 @@ button:hover,
 }
 
 .page-title a {
-  // color: var(--cherry);
   color: var(--brilliance);
 }
-
-/* .sticky .page-title a {
-    // no sticky needs to be used anymore since Ive moved away from wordpress
-    text-decoration: none; // why removing the indication and then replacing it with a border-bottom
-    border-bottom: 3px solid var(--cherry); // global
-    box-shadow: inset 0 -4px 0 var(--cherry);
-}
-
-.sticky .page-title a:hover {
-    border-bottom: none;
-    box-shadow: none;
-    // background-color: rgba($warning-color, 0.3); // why am I using a warning color here?
-    // removed because of the $warning color
-} */
-
-// this must be able to be done better
-// back to the simple styles
-/* .article-content h1 a,
-.article-content h2 a,
-.article-content h3 a,
-.article-content h4 a,
-.article-content h5 a,
-.article-content h6 a,
-.quote-content h1 a,
-.quote-content h2 a,
-.quote-content h3 a,
-.quote-content h4 a,
-.quote-content h5 a,
-.quote-content h6 a {
-    color: var(--black-metal); 
-} */
 
 .article-footer a,
 .quote-content p a,
 .quote-footer a {
-  text-decoration: none; //why removing the indication of a link?
+  /* why removing the indication of a link? */
+  text-decoration: none;
   color: var(--cherry);
 }
 
@@ -480,29 +426,13 @@ button:hover,
   text-decoration: line-through;
 }
 
-/* .article-content .button,
-.quote-content .button {
-    text-decoration: none;
-    box-shadow: none;
-    color: var(--cherry);
-    background: var(--brilliance);
-    border-right: 0.1em solid var(--cherry); // global?
-    border-bottom: 0.1em solid var(--cherry);
-    border-radius: 3px;
-    padding: 1rem;
-} */
-
-/* .article-content .button:hover,
-.quote-content .button:hover {
-    border-bottom: 0.1em solid var(--cherry); // global?
-} */
-
 .breacdcrumbs {
   color: gray;
 }
 
 .breadcrumbs a {
-  color: #575757; // TODO dark-gray doesn't pass contrast checks but I didn't want to go all the way to black
+  /* TODO dark-gray doesn't pass contrast checks but I didn't want to go all the way to black */
+  color: #575757;
   text-decoration: line-through;
 
   @media (prefers-color-scheme: dark) {
@@ -530,7 +460,8 @@ button:hover,
 .pagination .nav-links .next,
 .pagination .nav-links .prev {
   border-bottom: none;
-  box-shadow: none; // would this have a box shadow?
+  /* would this have a box shadow? */
+  box-shadow: none;
   color: var(--black-metal);
   @media (prefers-color-scheme: dark) {
     color: var(--brilliance);
@@ -550,49 +481,13 @@ button:hover,
 .footer_copyright a,
 .footer_nav a,
 .footer_contact a {
-  /* text-decoration: none;
-    color: var(--black-metal);
-    box-shadow: inset 0 -4px 0 var(--cherry); // this is alternative underline that rises up on hover
-    transition: 300ms; */
   font-weight: bold;
 }
-/* 
-.footer_copyright a:hover,
-.footer_nav a:hover,
-.footer_contact a:hover {
-    border-bottom: none;
-    box-shadow: inset 0 -8px 0 var(--cherry);
-} */
-
-/* .article-category a,
-.featured-category a{
-    color: gray;
-} */
-
-/* removing this to try and get everything back to a basic style guide
-.post-navigation a {
-    color: var(--black-metal);
-}
 
 .article-tags a {
-    color: gray;
-}
-
-.single .article-comments a {
-    color: var(--black-metal);
-    text-decoration: none; // can 2019 css do this better?
-    border-bottom: 3px solid var(--cherry);
-    box-shadow: inset 0 -4px 0 var(--cherry);
-}
-
-.single .article-comments a:hover { // this seems like it would be nicer with a transition time?
-    border-bottom: none;
-    box-shadow: none;
-    background-color: var(--cherry);
-} */
-
-.article-tags a {
-  @extend button;
+  /*
+  TODO: @extend was sass
+  @extend button; */
   margin-bottom: 0;
 
   @media (min-width: $stork) {
@@ -601,34 +496,33 @@ button:hover,
 }
 
 /*--------------------------------------------------------------
-11.0 Featured Image Hover
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
 12.0 Navigation
 --------------------------------------------------------------*/
 
 .navigation-top ul {
-  // does this need to be told to be a flex?
-  // flex-direction: column;
   padding-left: 0;
-
+  /* TODO: media variables are sass
   @media (min-width: $stork) {
     padding-left: 1rem;
-  }
-} // why am I closing these out rather than just embedding them
+  } */
+  /* why am I closing these out rather than just embedding them */
+}
 
 .navigation-top ul li {
-  font-size: 1.5em; // type scale?
+  /* type scale? */
+  font-size: 1.5em;
   font-weight: bold;
-  // margin-top: 1rem;
-  padding-top: 1rem; // this has to be a padding otherwise you loose the hr on scroll between
+  /* this has to be a padding otherwise you loose the hr on scroll between */
+  padding-top: 1rem;
   margin-bottom: 0;
 
-  list-style: none; // this seems like its doubling down on .menu but wasa needed
-  @media (min-width: $stork) {
+  /* this seems like its doubling down on .menu but wasa needed */
+  list-style: none;
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     font-size: 2.25em; // type scale?
-  }
+  } */
 }
 
 .navigation-top ul li a {
@@ -636,12 +530,14 @@ button:hover,
 }
 
 .navigation-top ul li a {
-  // this might not be for all but it is for now
+  /* this might not be for all but it is for now */
   display: flex;
 
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     flex-direction: column;
-  }
+  } */
 }
 
 .single .navigation-top ul {
@@ -652,11 +548,9 @@ button:hover,
   text-align: center;
 }
 
-// .footer_menu li,
 .category-sub li {
-  // border: .25em solid var(--cherry); // global?
 
-  a {
+  & a {
     font-weight: bold;
     background: var(--cherry);
     color: var(--brilliance);
@@ -665,29 +559,27 @@ button:hover,
     text-decoration: none;
   }
 
-  a:hover {
+  & a:hover {
     background: hsl(var(--cherry__base), var(--dull));
     text-decoration: line-through;
   }
 }
 
 .footer_menu li {
-  a {
+  & a {
     background: var(--cherry);
     color: var(--brilliance);
     padding: 1rem;
     text-decoration: none;
-    display: block; // fill the box
+    /* fill the box */
+    display: block;
     transition: var(--global-transition);
     font-weight: bold;
   }
 
-  a:hover {
+  & a:hover {
     text-decoration: line-through;
     background: hsl(var(--cherry__base), var(--dull));
-    @media (prefers-color-scheme: dark) {
-      // background: lighten(var(--cherry), 10%); // TODO
-    }
   }
 }
 
@@ -696,7 +588,8 @@ button:hover,
 --------------------------------------------------------------*/
 
 body {
-  min-height: 100vh; // make sure the page is always filled
+  /* make sure the page is always filled */
+  min-height: 100vh;
 }
 
 img,
@@ -712,7 +605,7 @@ figure {
 }
 
 .box {
-  // I really want to get rid of this what is it and where is it used?
+  /* I really want to get rid of this what is it and where is it used? */
   overflow: hidden;
   z-index: 10;
   width: 100%;
@@ -731,31 +624,36 @@ figure {
 }
 
 .subheader {
-  font-size: 2em; // type scale?
+  /* type scale? */
+  font-size: 2em;
   color: gray;
-  margin: 0.1em 0; // why so slender? or just be a zero
+  /* why so slender? or just be a zero */
+  margin: 0.1em 0;
 }
 
 .site-branding-text {
   writing-mode: vertical-rl;
   justify-self: center;
-  background: black; // adding this incase we dont have images the text is still visible // true black not var(--black-metal) for the screen blend to not show anything
+  /* adding this incase we dont have images the text is still visible // true black not var(--black-metal) for the screen blend to not show anything */
+  background: black;
 
-  a {
+  & a {
     color: var(--brilliance);
     padding: 1rem;
-    display: inline-block; // am I sure this is neccessary
+    /* am I sure this is neccessary */
+    display: inline-block;
   }
 }
 
 .single .site-branding-text {
-  // no longer over the image
+  /* no longer over the image */
   writing-mode: initial;
 
-  a {
+  & a {
     padding: initial;
     color: var(--black-metal);
-    text-decoration: none; // I have the hero underneath which is kinda taking care of this
+    /* I have the hero underneath which is kinda taking care of this */
+    text-decoration: none;
     @media (prefers-color-scheme: dark) {
       color: var(--brilliance);
     }
@@ -763,12 +661,14 @@ figure {
 }
 
 .overlaying-image {
-  filter: grayscale(100%); // does this need a 100% or is this a default?
+  /* does this need a 100% or is this a default? */
+  filter: grayscale(100%);
   mix-blend-mode: multiply;
   @media (prefers-color-scheme: dark) {
     mix-blend-mode: screen;
   }
-  z-index: 14; // why this number?
+  /* why this number? */
+  z-index: 14;
 }
 
 .custom-header-media img,
@@ -781,20 +681,14 @@ figure {
 --------------------------------------------------------------*/
 
 .front-page-titles {
-  // background: var(--brilliance);
   text-align: center;
   font-weight: bold;
 }
 
 .fp-box {
-  // front page box these are the red areas behind clicks code and camera on the split levels
+  /* front page box these are the red areas behind clicks code and camera on the split levels */
   background: var(--cherry);
   color: var(--brilliance);
-  /* 	padding: 0.5em;
-
-    @media (min-width: $stork) {
-        padding: 1rem;
-    } */
 }
 /*--------------------------------------------------------------
 13.3 Regular Content
@@ -805,17 +699,21 @@ figure {
 }
 
 #comments {
-  padding: 0 !important; // why important?
+  /* why important? */
+  padding: 0 !important;
 }
 
 .cat-title {
-  // wrong place
+  /* wrong place */
   margin-top: 1rem * 2;
-  font-size: 2em; // type scale?
+  /* type scale? */
+  font-size: 2em;
 
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     font-size: 3em; // type scale?
-  }
+  } */
 }
 
 /*--------------------------------------------------------------
@@ -827,16 +725,19 @@ figure {
 }
 
 .featured-category-title {
-  margin: 0.5em auto; // why is this and padding compressed?
-  font-size: 2em; // type scale?
-  border: 0.2em solid var(--cherry); // global?
+  /* why is this and padding compressed? */
+  margin: 0.5em auto;
+  /* type scale? */
+  font-size: 2em;
+  /* global? */
+  border: 0.2em solid var(--cherry);
   padding: 0.5em;
   word-wrap: break-word;
   text-align: center;
-
+/* TODO: media variables are sass
   @media (min-width: $stork) {
     font-size: 6em; // this is really large?
-  }
+  } */
 }
 
 .featured-category-title a:hover {
@@ -851,137 +752,6 @@ figure {
   text-decoration: line-through;
 }
 
-.comment-body {
-  display: block !important; // this was getting stuck on a grid display from what?
-  grid-auto-columns: auto !important; // its a display these shouldnt work now?
-  grid-template-columns: auto; // its a display these shouldnt work now?
-  grid-auto-rows: auto !important; // its a display these shouldnt work now?
-}
-
-/*--------------------------------------------------------------
-14.0 Comments
---------------------------------------------------------------*/
-
-/* currently taken from twentyseventeen as comments take time and are boring if i dont use them alot but should look at this */
-
-#comments {
-  clear: both;
-  padding: 2em 0 0.5em; // I need to do this in the way I work
-}
-
-.comments-title {
-  font-size: 20px; // type scale?
-  font-size: 1.25rem; // why twice?
-  margin-bottom: 1.5em;
-}
-
-.comment-list,
-.comment-list .children {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.comment-list li:before {
-  display: none;
-}
-
-.comment-body {
-  margin-left: 65px; // deal with this?
-}
-
-.comment-author {
-  font-size: 16px; // type scale?
-  font-size: 1rem;
-  margin-bottom: 0.4em;
-  position: relative;
-  z-index: 2;
-}
-
-.comment-author .avatar {
-  height: 50px;
-  left: -65px;
-  position: absolute;
-  width: 50px;
-}
-
-.comment-author .says {
-  display: none;
-}
-
-.comment-meta {
-  margin-bottom: 1.5em;
-}
-
-.comment-metadata {
-  color: #767676;
-  font-size: 10px;
-  font-size: 0.625rem;
-  font-weight: 800;
-  letter-spacing: 0.1818em;
-  text-transform: uppercase;
-}
-
-.comment-metadata a {
-  color: #767676;
-}
-
-.comment-metadata a.comment-edit-link {
-  color: #222;
-  margin-left: 1em;
-}
-
-/* .comment-body {
-    // color: #333;
-    font-size: 14px; // this should get fixed
-    font-size: 0.875rem;
-    margin-bottom: 4em;
-}
- */
-.comment-reply-link {
-  font-weight: 800;
-  position: relative;
-}
-
-.comment-reply-link .icon {
-  color: #222;
-  left: -2em;
-  height: 1em;
-  position: absolute;
-  top: 0;
-  width: 1em;
-}
-
-.children .comment-author .avatar {
-  height: 30px;
-  left: -45px;
-  width: 30px;
-}
-
-.bypostauthor > .comment-body > .comment-meta > .comment-author .avatar {
-  border: 1px solid #333; // why not a $variable
-  padding: 2px;
-}
-
-.no-comments,
-.comment-awaiting-moderation {
-  color: #767676;
-  font-size: 14px; // this is wrong
-  font-style: italic; // this is wrong
-}
-
-.comments-pagination {
-  margin: 2em 0 3em;
-}
-
-.form-submit {
-  text-align: right;
-}
-
-/*--------------------------------------------------------------
-15.0 Widgets
---------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 16.0 Media
 --------------------------------------------------------------*/
@@ -994,16 +764,19 @@ figure {
 
 svg {
   fill: currentColor;
-  width: 1em; // thats pretty small?
+  /* thats pretty small? */
+  width: 1em;
 }
 
 .icon {
   display: inline-block;
   fill: currentColor;
   height: 1em;
-  position: relative; /* Align more nicely with capital letters */ // what was it before?
+  /* what was it before? */
+  position: relative; /* Align more nicely with capital letters */
   top: -0.0625em;
-  vertical-align: middle; // doesnt this negate what comes before?
+  /* doesnt this negate what comes before? */
+  vertical-align: middle;
   width: 1em;
 }
 
@@ -1012,13 +785,6 @@ svg {
   color: gray;
   font-style: italic;
   margin-bottom: 1.5em;
-}
-
-.wp-caption img[class*="wp-image-"] {
-  // clarify this selector?
-  display: block;
-  margin-left: auto; // can this be done in one line?
-  margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
@@ -1038,7 +804,7 @@ svg {
   z-index: 1;
 }
 
-// http://css3.bradshawenterprises.com/cfimg/
+/* http://css3.bradshawenterprises.com/cfimg/ */
 /* Just do the link I dont understand the math
 For "n" images You must define:
 a=presentation time for one image
@@ -1097,7 +863,7 @@ css slidesshow in Rileys google drive can do all the math
 --------------------------------------------------------------*/
 
 .gallery-item {
-  // am I using any galleries and I presume these have changed with gutenberg?
+  /* am I using any galleries and I presume these have changed with gutenberg? */
   display: inline-block;
   text-align: left;
   vertical-align: top;
@@ -1105,9 +871,11 @@ css slidesshow in Rileys google drive can do all the math
   padding: 0 1em 0 0;
   width: 50%;
 
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     max-width: 25%;
-  }
+  } */
 }
 
 .gallery-columns-1 .gallery-item {
@@ -1124,26 +892,26 @@ css slidesshow in Rileys google drive can do all the math
 .widget-area .gallery-item a,
 .widget-area .gallery-item a:hover,
 .widget-area .gallery-item a:focus {
-  -webkit-box-shadow: none; // will sass do this for me?
+  /* will sass do this for me? */
+  -webkit-box-shadow: none;
   box-shadow: none;
-  background: none; // whats this overwritting?
+  /* whats this overwritting? */
+  background: none;
   display: inline-block;
   max-width: 100%;
 }
 
 .gallery-item a img {
   display: block;
-  -webkit-transition: -webkit-filter 0.2s ease-in;
   transition: -webkit-filter 0.2s ease-in;
   transition: filter 0.2s ease-in;
-  transition: filter 0.2s ease-in, -webkit-filter 0.2s ease-in;
-  -webkit-backface-visibility: hidden; // what is this and will sass deal with the pre name?
+  /* what is this and will sass deal with the pre name? */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .gallery-item a:hover img,
 .gallery-item a:focus img {
-  -webkit-filter: opacity(60%); // will sass do this for me?
   filter: opacity(60%);
 }
 
@@ -1155,15 +923,19 @@ css slidesshow in Rileys google drive can do all the math
 }
 
 .gallery-columns-1 .gallery-item {
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     max-width: 100%;
-  }
+  } */
 }
 
 .gallery-columns-2 .gallery-item {
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     max-width: 50%;
-  }
+  } */
 }
 
 .gallery-columns-3 .gallery-item {
@@ -1173,9 +945,11 @@ css slidesshow in Rileys google drive can do all the math
 }
 
 .gallery-columns-4 .gallery-item {
-  @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     max-width: 25%;
-  }
+  } */
 }
 
 .gallery-caption {
@@ -1183,15 +957,11 @@ css slidesshow in Rileys google drive can do all the math
 }
 
 /*--------------------------------------------------------------
-17.0 Customizer
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
 18.0 SVGs Fallbacks
 --------------------------------------------------------------*/
 
 .svg-fallback {
-  // clarify this? seems like its taken from something?
+  /* clarify this? seems like its taken from something? */
   display: none;
 }
 
@@ -1211,14 +981,10 @@ css slidesshow in Rileys google drive can do all the math
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1;
-  -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-  -ms-transform: rotate(180deg); /* IE 9 */
   transform: rotate(180deg);
 }
 
 .no-svg .dropdown-toggle.toggled-on .svg-fallback.icon-angle-down {
-  -webkit-transform: rotate(0); /* Chrome, Safari, Opera */
-  -ms-transform: rotate(0); /* IE 9 */
   transform: rotate(0);
 }
 
@@ -1248,18 +1014,4 @@ css slidesshow in Rileys google drive can do all the math
   height: auto;
   position: relative !important; /* overrides previous !important styles */
   width: auto;
-}
-
-/*--------------------------------------------------------------
-19.0 Media Queries
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-20.0 Print
---------------------------------------------------------------*/
-
-@media print {
-  // why have I got an empty selector?
-
-  /* Hide elements */
 }

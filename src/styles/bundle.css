@@ -3,11 +3,12 @@
 }
 
 .mdc-text-field--textarea {
-  padding-top: 0.1em; // hack to fix an overlap but breaks other things
+  /* hack to fix an overlap but breaks other things */
+  padding-top: 0.1em;
 }
 
 .article-form label {
-  // hack to fix foundation
+  /* hack to fix foundation */
   clip: auto;
   height: initial;
   position: relative !important;
@@ -16,7 +17,6 @@
 
 #snap-scroll-container-coordinates {
   width: 100%;
-  // width: 20%; // just as a test
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
@@ -35,7 +35,8 @@
   width: 80%;
   margin: 0 auto;
   position: relative;
-  background-color: #f0f0f0; // TODO
+  /* // TODO */
+  background-color: #f0f0f0;
   display: inline-block;
 
   scroll-snap-align: center;
@@ -45,7 +46,8 @@
 
 .child img {
   width: 100%;
-  vertical-align: middle; // maybe I should do something better for images of a different height but for now this works
+  /* maybe I should do something better for images of a different height but for now this works */
+  vertical-align: middle;
 }
 
 #thumbnails img {
@@ -55,7 +57,8 @@
 #gallery {
   display: grid;
 
-  #snap-scroll-container-coordinates,
+/* TODO: I dont think this is right */
+#snap-scroll-container-coordinates,
   #left,
   #right {
     grid-row: 1;
@@ -71,7 +74,8 @@
 }
 
 #left {
-  justify-self: left; // make these as small as possible as if your over the the scroll behind doesnt work
+  /* make these as small as possible as if your over the the scroll behind doesnt work */
+  justify-self: left;
   padding-left: 1rem;
 }
 
@@ -83,9 +87,11 @@
 #left a,
 #right a {
   text-decoration: none;
-  color: yellow; // TODO
+  /* TODO: */
+  color: yellow;
 }
 
 html {
-  scroll-behavior: smooth; // im not 100% sure this is doing what I want with the sideways but its helping for the vertical
+  /* im not 100% sure this is doing what I want with the sideways but its helping for the vertical */
+  scroll-behavior: smooth;
 }

@@ -4,10 +4,10 @@
 
 :root {
   /*------------------*/
-  //  #COLORS
+  /* #COLORS */
   /*------------------*/
 
-  // louie change
+  /* louie change */
   --pitch: 2.5%;
   --dark: 12.5%;
   --dull: 25%;
@@ -22,18 +22,18 @@
   --black-out: hsl(0, 0%, 12.5%);
   --raven-black: hsl(0, 0%, 25%);
   --industrial-revolution: hsl(0, 0%, 37.5%);
-  // gray
+  /* gray */
   --cold-grey: hsl(0, 0%, 62.5%);
   --tin-soldier: hsl(0, 0%, 75%);
   --kingly-cloud: hsl(0, 0%, 87.5%);
   --brilliance: hsl(0, 0%, 97.5%);
 
-  // kinda was primary color
+  /* kinda was primary color */
   --cherry: hsl(0, 75%, 50%);
   --cherry__base: 0, 75%;
 
   /*------------------*/
-  //  #SHADOWS
+  /* #SHADOWS */
   /*------------------*/
 
   --mesosphere: 0 5px 12px hsla(0, 0%, 0%, 0.4),
@@ -44,7 +44,7 @@
     0 3px 6px hsla(0, 0%, 0%, 0.14);
 
   /*------------------*/
-  //  #WIDTHS
+  /* #WIDTHS */
   /*------------------*/
 
   --swan: 20rem;
@@ -54,27 +54,30 @@
   --pelican: 60rem;
   --albatross: 80rem;
 
-  // $page-width: 77rem; // this needs some good documentation about when and especially when its not used
-  // 1232 pixels // this seems wider? than maybe it should be
-  // 2em 1fr 1fr 1fr 2em
-  // 32px 1168px 32px // this doesnt relate much to the small medium large
-  // 389.333px each column
-  // each column is 24em which is really too skinny for a singular column
-  // a double column is 48em / 778px which is a nice writing length
-  // the full width main colum is 73em which is too wide
+  /*
+  $page-width: 77rem; // this needs some good documentation about when and especially when its not used
+  1232 pixels // this seems wider? than maybe it should be
+  2em 1fr 1fr 1fr 2em
+  32px 1168px 32px // this doesnt relate much to the small medium large
+  389.333px each column
+  each column is 24em which is really too skinny for a singular column
+  a double column is 48em / 778px which is a nice writing length
+  the full width main colum is 73em which is too wide
 
-  // the question then comes do I allow things to keep going wider to get a nice length
+  the question then comes do I allow things to keep going wider to get a nice length
 
-  // $reading-width: 48rem; // 16*48 is a default ipad and a nice way to read
+  $reading-width: 48rem; // 16*48 is a default ipad and a nice way to read
+  */
 
   /*------------------*/
-  //  #TYPOGHRAPY
+  /* #TYPOGHRAPY */
   /*------------------*/
 
-  --baseline: 1.5rem; // 24px
+  /* 24px */
+  --baseline: 1.5rem;
 
   /* 🏔 Mountain Names as Font Sizing Defaults */
-  // TODO: have a nicer rythym for these
+  /* TODO: have a nicer rythym for these */
   /* (Highest by Continent) */
   --everest: 3rem; /* 29,035ft Asia */
   --aconcagua: 2.5rem; /* 22,840ft South America */
@@ -84,17 +87,19 @@
   --vinson_massif: 1rem; /* 16,050ft Antartica */
   --kosciuszko: 0.75rem; /* 7,310ft Australia */
 
-  --body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; // TODO check the quotes
+  /* TODO check the quotes */
+  --body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 
   /*------------------*/
-  //  #TIMING
+  /* #TIMING */
   /*------------------*/
 
-  --global-transition: 0.5s ease; // used for hover states I think I can remove this from being a "global"
+  /* used for hover states I think I can remove this from being a "global" */
+  --global-transition: 0.5s ease;
 
   /*------------------*/
-  //  #Z INDEX
-  // https://en.wikipedia.org/wiki/Forest
+  /* #Z INDEX */
+  /* https://en.wikipedia.org/wiki/Forest */
   /*------------------*/
 
   --floor: 1;
@@ -104,8 +109,10 @@
 }
 
 /*------------------*/
-//  #WIDTHS FOR MEDIA QUERIES
+/* #WIDTHS FOR MEDIA QUERIES */
 /*------------------*/
 
+/*
+TODO: media variables are sass
 $stork: 40rem;
-$pelican: 60rem;
+$pelican: 60rem; */

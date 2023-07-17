@@ -7,13 +7,15 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 
 // https://www.gatsbyjs.com/docs/creating-and-modifying-pages/#trade-offs-of-querying-for-all-fields-in-the-context-object-of-gatsby-nodejs
-const BlogTemplate = ({ data, pageContext }) => {
+const BlogTemplate = (
+  // { data, pageContext }
+) => {
 
-  const { currentPage, numPages } = pageContext
-  const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? '' : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
+  /*   const { currentPage, numPages } = pageContext
+    const isFirst = currentPage === 1
+    const isLast = currentPage === numPages
+    const prevPage = currentPage - 1 === 1 ? '' : (currentPage - 1).toString()
+    const nextPage = (currentPage + 1).toString() */
 
   return (
     <>
@@ -21,7 +23,7 @@ const BlogTemplate = ({ data, pageContext }) => {
       <h1>Blog</h1>
       <hr />
       <ol>
-        {
+        {/* {
           data.allStrapiBlog.nodes.map(blog => (
             <li
               key={blog.id}
@@ -30,18 +32,18 @@ const BlogTemplate = ({ data, pageContext }) => {
                 <h2>
                   {blog.title}
                 </h2>
-                {/* <When published={blog.node.publishedAt} updated={blog.node.updatedAt} /> */}
+                <When published={blog.node.publishedAt} updated={blog.node.updatedAt} />
               </Link>
             </li>
           ))
-        }
+        } */}
       </ol>
 
       <hr />
 
       <h3>pagination starts here</h3>
       <ul>
-        {!isFirst && (
+        {/* {!isFirst && (
           <Link to={`/blog/${prevPage}`} rel="prev">
             ← Previous Page
           </Link>
@@ -63,7 +65,7 @@ const BlogTemplate = ({ data, pageContext }) => {
           <Link to={`/blog/${nextPage}`} rel="next">
             Next Page →
           </Link>
-        )}
+        )} */}
       </ul>
 
       <Footer />
@@ -78,17 +80,19 @@ export const query = graphql`
     $limit: Int!
     $skip: Int!
   ) {
-    allStrapiBlog(
-      sort: {updatedAt: DESC},
+    allSanityBlog(
+      sort: {_updatedAt: DESC},
       limit: $limit,
       skip: $skip
     ) {
       nodes {
-        id
+        _id
         title
-        slug
-        publishedAt
-        updatedAt
+        slug {
+          current
+        }
+        _createdAt
+        _updatedAt
       }
     }
   }

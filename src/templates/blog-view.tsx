@@ -7,7 +7,7 @@ import showdown from "showdown";
 import Header from "../components/header";
 import Footer from "../components/footer";
 
-function Markdown(props) {
+/* function Markdown(props) {
   var converter = new showdown.Converter(),
     text = props.article,
     html = converter.makeHtml(text);
@@ -15,16 +15,10 @@ function Markdown(props) {
   return (
     <div dangerouslySetInnerHTML={{ __html: html }} />
   )
-}
-
-// ! test
-function Console(props) {
-  console.log(props.log);
-  return null;
-}
+} */
 
 // * Theres a bug the first is returning the first again
-function Previous(props) {
+/* function Previous(props) {
   if (props.node.slug !== props.previous.slug) {
     return (
       <div className="blog-nav-previous">
@@ -36,24 +30,22 @@ function Previous(props) {
   } else {
     return null;
   }
-}
+} */
 
 // function
 
-const BlogView = ({ data }) => {
+const BlogView = (
+  // { data }
+) => {
   return (
     <>
-
-      <Console log={data} />
-      <Console log={data.next} />
-
       <Header />
       <div className="spine-border">{/* stay gold */}</div>
 
       {/* // TODO: the nesting here is a mess build it out as a storyboard */}
       <article>
         <div className="article-content">
-          <h1>{data.node.title}</h1>
+          {/* <h1>{data.node.title}</h1> */}
           {/* <Markdown article={blog.article.data.article} /> */}
         </div>
       </article>
@@ -62,13 +54,13 @@ const BlogView = ({ data }) => {
 
       <section className="blog-nav">
 
-        <Previous node={data.node} previous={data.previous} />
+        {/* <Previous node={data.node} previous={data.previous} /> */}
         <hr />
 
         <div className="blog-nav-previous">
-          <Link to={`/blog/${data?.next?.slug}`}>
+          {/*           <Link to={`/blog/${data?.next?.slug}`}>
             Next <span>{data?.next?.title}</span>
-          </Link>
+          </Link> */}
         </div>
       </section>
       <hr />
@@ -82,7 +74,7 @@ const BlogView = ({ data }) => {
             </Link>
           </li>
           <li aria-current="page">
-            {data.node.title}
+            {/* {data.node.title} */}
           </li>
         </ol>
       </nav>
@@ -96,8 +88,7 @@ const BlogView = ({ data }) => {
 
 export default BlogView;
 
-
-export const query = graphql`
+/* export const query = graphql`
   query (
     $slug: String!,
     $next: String,
@@ -119,4 +110,4 @@ export const query = graphql`
       slug
     }
   }
-`
+` */

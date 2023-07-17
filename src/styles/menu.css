@@ -3,48 +3,58 @@
   // https://codepen.io/rm/pen/ldhon
 --------------------------------------------------------------*/
 
-// which pages have a vertical menu stack
-// front page
-// Category
-// page
+/*
+  which pages have a vertical menu stack
+  front page
+  Category
+  page
+*/
 
 .home #top-menu,
 .category #top-menu,
 .page #top-menu {
-  min-height: 9rem; // pulling the hr up means we need to specify this
-  @media (min-width: $stork) {
+  /* pulling the hr up means we need to specify this */
+  min-height: 9rem;
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
     min-height: 10rem;
-  }
+  } */
 
-  a {
+  & a {
     width: 100%;
     display: block;
   }
 
-  a:hover {
+  & a:hover {
     text-decoration: none;
     display: block;
   }
 
-  li {
+  & li {
     list-style: none;
   }
 
-  li:first-child:hover ~ hr {
-    margin-top: -6rem; // weird backwards math
+  & li:first-child:hover ~ hr {
+    /* weird backwards math */
+    margin-top: -6rem;
     opacity: 1;
-    @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
       margin-top: -8rem;
-    }
+    } */
   }
 
   li:nth-child(2):hover ~ hr {
     margin-top: -3rem;
     opacity: 1;
 
-    @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
       margin-top: -4rem;
-    }
+    } */
   }
 
   li:nth-child(3):hover ~ hr {
@@ -53,105 +63,67 @@
   }
 
   hr {
-    //   position: absolute; // without this it does a freakout dance on hover
-    position: sticky; // lets me remove width and defaults to 100% which absolute does not
-    //   width: 89%; // guess and check
+    /* lets me remove width and defaults to 100% which absolute does not */
+    position: sticky;
     background: hsl(var(--cherry__base), var(--dull));
     border: none;
     transition: 0.3s ease-in-out;
-    z-index: -1; // slide behind and dont get in the way of the hover
-    // margin-top: 2rem; // start at the bottom
-    margin-top: -9rem; // start at the top makes more sense as thats where people come from // this also causes the shape of the resting ul to be tiny
+    /* slide behind and dont get in the way of the hover */
+    z-index: -1;
+    /* start at the top makes more sense as thats where people come from // this also causes the shape of the resting ul to be tiny */
+    margin-top: -9rem;
     opacity: 0;
     height: 0.5rem;
 
-    @media (min-width: $stork) {
+/*
+TODO: media variables are sass
+@media (min-width: $stork) {
       // width: 22%; // guess and check
       // max-width: 22rem; // guess and check
       height: 1rem;
       margin-top: -10rem; // start at the top makes more sense as thats where people come from
-    } // medium
-  } // hr
-} // #top-menu
+    } // medium */
+  }
+}
 
-// which pages have a horizontal menu stack
-// single
+/*
+  which pages have a horizontal menu stack
+  single
+*/
 
 .single #top-menu {
-  /*   // currently horizontal isnt working run this so vertical can be live
-  hr {
-    display: none;
-  } */
 
   display: inline;
 
-  a:hover {
+  & a:hover {
     text-decoration: none;
   }
 
-  li {
+  & li {
     display: inline-block;
   }
 
-  li:first-child:hover ~ hr {
+  & li:first-child:hover ~ hr {
     margin-left: 0;
     opacity: 1;
   }
 
-  li:nth-child(2):hover ~ hr {
-    // margin-left: 33%;
+  & li:nth-child(2):hover ~ hr {
     opacity: 1;
   }
 
-  li:nth-child(3):hover ~ hr {
-    // margin-left: 66%;
+  & li:nth-child(3):hover ~ hr {
     opacity: 1;
   }
 
-  hr {
+  & hr {
     height: 1rem;
-    // width: 33%;
     margin: 0;
-    margin-bottom: -1rem; // sit in the grid gap
-    // margin-left: -33%; // hide when its not in use
+    /* sit in the grid gap */
+    margin-bottom: -1rem;
     opacity: 0;
     background: hsl(var(--cherry__base), var(--dull));
     border: none;
     transition: 0.3s ease-in-out;
   }
 }
-
-/* nav#horizontal {
-    font-size: 2rem;
-  
-    ul {
-      width: 100%;
-    }
-  
-    li {
-      display: inline-block;
-      width: 33%; // this and the rest might be able to be done with js but for now its fine
-    }
-  
-    li:first-child a:hover ~ hr {
-      margin-left: 0;
-    }
-  
-    li:nth-child(2) a:hover ~ hr {
-      margin-left: 33%;
-    }
-  
-    li:nth-child(3) a:hover ~ hr {
-      margin-left: 66%;
-    }
-  
-    hr {
-      height: .25rem;
-      width: 25%;
-      margin: 0;
-      margin-left: -33%; // hide when its not in use
-      background: tomato;
-      border: none;
-      transition: .3s ease-in-out;
-    }
-  } */

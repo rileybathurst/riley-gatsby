@@ -1,12 +1,13 @@
 /*--------------------------------------------------------------
-CLICKS CODE CAMERA
---------------------------------------------------------------*/
+/* CLICKS CODE CAMERA */
+/* --------------------------------------------------------------*/
 
 .ghost-titles {
   max-width: var(--albatross);
   margin-inline: auto;
 
-  display: grid; // I am using this for the grid gap it could probably be done better
+  /* I am using this for the grid gap it could probably be done better */
+  display: grid;
   grid-template-columns: 2rem repeat(6, 1fr) 2rem;
   gap: 0.5rem;
 
@@ -19,7 +20,7 @@ CLICKS CODE CAMERA
     background: var(--cherry);
     color: white;
 
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover */
     @media (hover: hover) {
       span {
         transition: 20s ease;
@@ -37,6 +38,7 @@ CLICKS CODE CAMERA
   }
 
   .presence {
-    opacity: 1 !important; // why do I need important?
+    /* why do I need important? */
+    opacity: 1 !important;
   }
 }

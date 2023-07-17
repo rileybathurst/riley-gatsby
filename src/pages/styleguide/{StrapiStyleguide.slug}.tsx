@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import StyleguideView from "../../views/styleguide-view"
 
-export const query = graphql`
+/* export const query = graphql`
   query StyleguideQuery($slug: String!) {
     strapiStyleguide(slug: { eq: $slug }) {
       id
@@ -13,14 +13,18 @@ export const query = graphql`
       }
     }
   }
-`
+` */
 
-const StyleguidesPage = ({ data }) => {
-  const styleguide = data.strapiStyleguide;
+const StyleguidesPage = (
+  // { data }
+) => {
+  // const styleguide = data.strapiStyleguide;
   return (
-    <StyleguideView
-      styleguide={styleguide}
-    />
+    <>
+      {/*     <StyleguideView
+      // styleguide={styleguide}
+  /> */}
+    </>
   );
 };
 

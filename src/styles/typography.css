@@ -1,22 +1,25 @@
 /*------------------*/
-//  #TYPOGRAPHY
+/* #TYPOGRAPHY */
 /*------------------*/
 
 /*------------------*/
-//  #BASES
+/* #BASES */
 /*------------------*/
 
 h2 {
-  margin-block-start: 0; // reset
+  /* reset */
+  margin-block-start: 0;
 }
 
 .riley {
-  font-size: 31.4vw; // guess and check
+  /* guess and check */
+  font-size: 31.4vw;
   color: var(--cherry);
 }
 
 .bathurst {
-  font-size: 17vw; // guess and check
+  /* guess and check */
+  font-size: 17vw;
   color: white;
   -webkit-text-stroke: 0.2rem var(--cherry);
 }

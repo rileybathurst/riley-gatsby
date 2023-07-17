@@ -1,5 +1,5 @@
 /*------------------*/
-//  #ANIMATION
+  /* #ANIMATION */
 /*------------------*/
 
 .titleSpinner {
@@ -23,19 +23,21 @@
   overflow-y: hidden;
 
   @media (min-width: $stork) {
-    height: 4rem; // same as the line height
+    /* TODO: same as the line height so make it a variable */
+    height: 4rem;
     margin-block-end: var(--global-margin);
   }
 
   h2 {
-    margin: 0; // this is now in the box above
+    /* this is now in the box above */
+    margin: 0;
     /* @keyframes duration | delay | iteration-count | name */
     animation: 5s 3s infinite slideUp;
   }
 }
 
 /* 100% divided by double the number of lines to account for pauses */
-// 100% shows a tiny amount of drops which is super annoying
+/* 100% shows a tiny amount of drops which is super annoying */
 @keyframes slideUp {
   0% {
     transform: translateY(0);

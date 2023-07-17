@@ -6,19 +6,22 @@ import Footer from "../components/footer"
 
 const NowPage = () => {
 
+  /*
+  TODO: build in sanity
+  
   const { allStrapiNow } = useStaticQuery(graphql`
-    query {
-      allStrapiNow(limit: 1) {
-        nodes {
-          description {
-            data {
-              description
+      query {
+        allStrapiNow(limit: 1) {
+          nodes {
+            description {
+              data {
+                description
+              }
             }
           }
         }
       }
-    }
-  `)
+    `) */
 
   return (
     <>
@@ -26,7 +29,7 @@ const NowPage = () => {
       <h1>Now</h1>
       <main>
         {/* // TODO: double check this is going the right direction so its showing newest theres only a single now */}
-        {allStrapiNow.nodes[0].description.data.description}
+        {/* {allStrapiNow.nodes[0].description.data.description} */}
       </main>
       <Footer />
     </>

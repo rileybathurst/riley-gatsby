@@ -1,5 +1,5 @@
 /*------------------*/
-//  #RILEY BATHURST
+  /* #RILEY BATHURST */
 /*------------------*/
 
 @import "variables";
@@ -12,13 +12,16 @@
 @import "ccc";
 @import "animation";
 
-@import "menu"; // fancy menu coming from webpackbuild so it wont be needed long term
+/* fancy menu coming from webpackbuild so it wont be needed long term */
+@import "menu";
 
 @import "riley";
 
-@import "bundle"; // riley-webpack manually updated
-// did I ever need this its google material
+/* riley-webpack manually updated */
+/* did I ever need this its google material */
+@import "bundle";
 
-@import "tryptych"; // this might end up overwriting some webpack so its after
+/* this might end up overwriting some webpack so its after */
+@import "tryptych";
 
 @import "pages/blog";

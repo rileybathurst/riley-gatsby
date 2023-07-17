@@ -8,24 +8,26 @@ import Footer from "../components/footer"
 
 const StyleguidesPage = () => {
 
+  /*
+  TODO: build in sanity
   const { allStrapiStyleguide } = useStaticQuery(graphql`
-    query {
-      allStrapiStyleguide {
-        nodes {
-          name
-          slug
-          id
+      query {
+        allStrapiStyleguide {
+          nodes {
+            name
+            slug
+            id
+          }
         }
       }
-    }
-  `)
+    `) */
 
   return (
     <>
       <Header />
       <h1>styleguides</h1>
       <main>
-        <ul>
+        {/* <ul>
           {
             allStrapiStyleguide.nodes.map(styleguides => (
               <li key={styleguides.id}>
@@ -35,7 +37,7 @@ const StyleguidesPage = () => {
               </li>
             ))
           }
-        </ul>
+        </ul> */}
       </main>
       <Footer />
     </>
