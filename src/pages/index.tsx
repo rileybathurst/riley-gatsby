@@ -23,7 +23,9 @@ const IndexPage = () => {
 
       allSanityBlog(
         limit: 1,
-        # filter: { featured: { eq: true } },
+        # // TODO: add a featured field to the blog
+        # filter: {featured: {eq: true}}
+        # filter: {fatured: {eq: true}}
         ) {
         nodes {
           id

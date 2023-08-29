@@ -26,8 +26,8 @@ const NowPage = () => {
   return (
     <>
       <Header />
-      <h1>Now</h1>
       <main>
+        <h1>Now</h1>
         {/* // TODO: double check this is going the right direction so its showing newest theres only a single now */}
         {/* {allStrapiNow.nodes[0].description.data.description} */}
       </main>

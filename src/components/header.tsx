@@ -20,12 +20,6 @@ const Header = () => {
 
   return (
     <header className='header__concept'>
-      <GatsbyImage
-        image={sanityHero.image?.asset?.gatsbyImageData}
-        // TODO: get the alt and fix the backup
-        alt={sanityHero.image?.asset?.altText || "Riley Bathurst"}
-        className="headshot"
-      />
       <div className='breadcrumbs'>HOME</div>
       <div className='spine'>PUSHING PIXELS</div>
       <h1 className='riley'>RILEY</h1>

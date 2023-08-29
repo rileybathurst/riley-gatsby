@@ -7,12 +7,11 @@ import Footer from "../../components/footer";
 const BlogViewPage = ({ data }) => {
   return (
     <>
-      {/* // ! testing */}
-      {/* <Header /> */}
+      <Header />
       <main>
         {data.sanityBlog.title}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

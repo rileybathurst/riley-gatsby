@@ -25,8 +25,8 @@ const StyleguidesPage = () => {
   return (
     <>
       <Header />
-      <h1>styleguides</h1>
       <main>
+        <h1>styleguides</h1>
         {/* <ul>
           {
             allStrapiStyleguide.nodes.map(styleguides => (

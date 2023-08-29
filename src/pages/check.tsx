@@ -1,34 +1,36 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 const CheckPage = () => {
 
-  /* const { allSanityCheck } = useStaticQuery(graphql`
+  const { allSanityCheck } = useStaticQuery(graphql`
       query {
-        allSanityCheck(limit: 1) {
+        allSanityCheck {
           nodes {
-            check
-            image {
-              asset {
-                gatsbyImageData
-              }
-            }
+            name
           }
         }
       }
-    `) */
+    `)
+
+  console.log(allSanityCheck)
 
   return (
     <>
-      <h1>Check 1</h1>
+      <Header />
       <main>
-        {/*  {allSanityCheck.nodes[0].check}
-        <GatsbyImage
-          image={allSanityCheck.nodes[0].image.asset.gatsbyImageData}
-          alt="Check 1"
-        /> */}
+        <h1>Check</h1>
+        <ul>
+          {allSanityCheck.nodes.map((check: { name: string }) => (
+            <li key={check.name}>
+              {check.name}
+            </li>
+          ))}
+        </ul>
       </main>
+      <Footer />
     </>
   )
 }

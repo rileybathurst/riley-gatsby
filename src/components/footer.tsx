@@ -29,7 +29,7 @@ const Footer = () => (
             {/* // TODO need to build search */}
             {/* <li key="search"><Link to='/search'>Search</Link></li> */}
             <li key="projects"><Link to='/projects'>Projects</Link></li>
-            <li key="blogs"><Link to='/blogs'>Blog</Link></li>
+            <li key="blogs"><Link to='/blog'>Blog</Link></li>
             <li key="styleguides"><Link to='/styleguides'>Styleguides</Link></li>
             {/* I can do something more interesting with this as a show whats available maybe an accordian or work in with what I already have */}
           </ul>
@@ -64,6 +64,7 @@ const Footer = () => (
         {/* // TODO: add a link to /rss.xml */}
         <div>
           <a href="/rss.xml">
+            {/* // ! this doesnt work yet */}
             <RSS />
           </a>
         </div>
