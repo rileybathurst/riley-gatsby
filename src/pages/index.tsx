@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import type { HeadFC, PageProps } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -6,90 +6,61 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Ghosts from "../components/ghosts"
 import Footer from "../components/footer"
 import SpineBorder from "../components/spine-border"
-// import Headshot from "../images/headshot"
 
 const IndexPage = () => {
 
-  /*   const data = useStaticQuery(graphql`
-      query IndexQuery {
-        allStrapiProject {
-          nodes {
-            id
-            title
-            excerpt
-            slug
-            start(formatString: "MM YYYY")
-            finish(formatString: "MM YYYY")
-  
-            hero {
-              alternativeText
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-  
-            trades {
-              id
-              name
+  const data = useStaticQuery(graphql`
+    query IndexQuery {
+      sanityHero {
+        id
+        image {
+          asset {
+            gatsbyImageData
+            altText
+          }
+        }
+      }
+
+      allSanityBlog(
+        limit: 1,
+        # filter: { featured: { eq: true } },
+        ) {
+        nodes {
+          id
+          title
+          slug {
+            current
+          }
+          excerpt
+          # start
+          # finish
+
+          image {
+            asset {
+              gatsbyImageData
+              altText
             }
           }
         }
       }
-    `) */
-
-  const { allSanityBlog } = useStaticQuery(graphql`
-  query SanityQuery {
-    allSanityBlog {
-      nodes {
-        id
-        title
-      }
     }
-  }
-`)
+  `)
 
-  let allProjects = allSanityBlog.nodes
+  let hero = data.sanityHero
+  let blog = data.allSanityBlog.nodes
 
-  // State for the list
-  const [list, setList] = useState([...allProjects.slice(0, 2)])
-
-  // State to trigger oad more
-  const [loadMore, setLoadMore] = useState(false)
-
-  // State of whether there is more to load
-  const [hasMore, setHasMore] = useState(allProjects.length > 2)
-
-  // Load more button click
-  const handleLoadMore = () => {
-    setLoadMore(true)
-  }
-
-  // Handle loading more articles
-  useEffect(() => {
-    if (loadMore && hasMore) {
-      const currentLength = list.length
-      const isMore = currentLength < allProjects.length
-      const nextResults = isMore
-        ? allProjects.slice(currentLength, currentLength + 2)
-        : []
-      setList([...list, ...nextResults])
-      setLoadMore(false)
-    }
-  }, [loadMore, hasMore])
-
-  //Check if there is more
-  useEffect(() => {
-    const isMore = list.length < allProjects.length
-    setHasMore(isMore)
-  }, [list])
+  console.log(hero)
 
   return (
     <>
       <header className='header__concept'>
-        {/* <Headshot /> */}
-        <div className='breadcrumbs'>HOME</div>
+        <GatsbyImage
+          image={hero.image?.asset?.gatsbyImageData}
+          alt={hero.image?.asset?.altText}
+          className="headshot"
+        />
+        {hero.image?.asset?.altText}
+        <div className='breadcrumbs'><Link to="/">HOME</Link></div>
         <div className='spine'>PUSHING PIXELS</div>
         <h1 className='riley'>RILEY</h1>
         <h2 className='bathurst'>BATHURST</h2>
@@ -97,12 +68,11 @@ const IndexPage = () => {
 
       <Ghosts />
 
-      {/* I wonder if I can drop a few levels of tags here */}
+      {/* // ? I wonder if I can drop a few levels of tags here */}
       <div className="background-dirty" >
         <main className="site-main">
 
-          <article> {/*  <?php post_class(); ?> */}
-
+          <article>
             <SpineBorder />
 
             <div className="fp-header titleSpinner">
@@ -122,34 +92,34 @@ const IndexPage = () => {
 
               <p><Link to="clients">Clients</Link></p>
 
-            </div>{/* .article-content */}
+            </div>
 
           </article>
 
-        </main> {/* .site-main */}
-      </div > {/* .background-dirty */}
+        </main>
+      </div >
 
-      <div className="">
-        <h2 className="passage" >Featured Projects</h2>
-        {list.map((project) => (
+      <div>
+        <h2 className="passage">Featured Projects</h2>
+        {blog.map((project) => (
           <div
             key={project.id}
             className="slab"
           >
             <article>
               <h2>
-                <Link to={project.slug}>
+                <Link to={project.slug.current}>
                   {project.title}
                 </Link>
               </h2>
 
               <div className="color-blocking">{/* stay gold*/}</div>
 
-              {/*               <GatsbyImage
-                image={project.hero.localFile.childImageSharp.gatsbyImageData}
-                alt={project.hero.alternativeText}
+              <GatsbyImage
+                image={project?.image?.asset?.gatsbyImageData || hero.image.asset.gatsbyImageData}
+                alt={project?.image?.asset?.alternativeText || hero.image.asset.altText}
                 className="hero"
-              /> */}
+              />
 
               <p className="excerpt">
                 {project.excerpt}
@@ -168,27 +138,16 @@ const IndexPage = () => {
 
               <aside className="dates">
                 {/* // TODO: date formating as words */}
-                {project.start} - {project.finish}
+                {/* {project.start} - {project.finish} */}
               </aside>
 
               <h3 className="explore">
-                <Link to={project.slug}>Explore {project.title}</Link>
+                <Link to={project.slug.current}>Explore {project.title}</Link>
               </h3>
             </article>
           </div>
         ))}
       </div>
-
-      {/* 
-      // TODO: release this once I have added more projects
-      <div className="passage">
-        {hasMore ? (
-          <button onClick={handleLoadMore} className=''>View more projects</button>
-        ) : (
-          <p>Thats all the projects</p>
-        )}
-        <hr />
-      </div> */}
 
       <Footer />
     </>

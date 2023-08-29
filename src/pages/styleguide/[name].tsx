@@ -4,7 +4,9 @@ import { Link } from "gatsby"
 import Header from "../../components/header"
 import Footer from "../../components/footer"
 
-function StyleguidesCatchAll({ params }) {
+function StyleguidesCatchAll(
+  // { params }
+) {
   return (
     <>
       <Header />
