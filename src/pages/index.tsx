@@ -110,7 +110,7 @@ const IndexPage = () => {
           >
             <article>
               <h2>
-                <Link to={project.slug.current}>
+                <Link to={`/projects/${project.slug.current}`}>
                   {project.title}
                 </Link>
               </h2>

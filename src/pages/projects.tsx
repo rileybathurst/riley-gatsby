@@ -25,6 +25,7 @@ const ProjectsPage = () => {
       <main>
         <h1>Projects</h1>
         <ul>
+          {/* // TODO: this will become a deck of cards */}
           {allSanityProject.nodes.map((project: {
             id: React.Key,
             slug: { current: string },
