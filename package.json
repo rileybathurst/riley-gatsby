@@ -18,9 +18,12 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001570",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
@@ -30,17 +33,28 @@
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-source-sanity": "^7.8.0",
     "gatsby-transformer-sharp": "^5.11.0",
+    "postcss-loader": "^7.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.7"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/addon-styling-webpack": "^0.0.5",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/react-webpack5": "^7.6.6",
+    "@storybook/test": "^7.6.6",
     "@types/node": "^20.4.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "postcss": "^8.4.26",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.1",
+    "storybook": "^7.6.6",
     "typescript": "^5.1.6"
   }
 }

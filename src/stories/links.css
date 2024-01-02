@@ -1,0 +1,8 @@
+a {
+  color: var(--cherry);
+}
+
+a:hover {
+  text-decoration: line-through;
+  /* color: hsl(var(--cherry__base), var(--dull)); */
+}
