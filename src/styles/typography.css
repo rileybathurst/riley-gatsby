@@ -2,14 +2,182 @@
 /* #TYPOGRAPHY */
 /*------------------*/
 
-/*------------------*/
-/* #BASES */
-/*------------------*/
+body {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-block-start: 0; /* browser reset */
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--everest);
+}
 
 h2 {
-  /* reset */
-  margin-block-start: 0;
+  font-size: var(--aconcagua)
 }
+
+h3 {
+  font-size: var(--denali)
+}
+
+h4 {
+  font-size: var(--kilimanjaro)
+}
+
+h5 {
+  font-size: var(--elbrus)
+}
+
+h6, p {
+  font-size: var(--vinson_massif)
+}
+
+p {
+  margin-top: 0; /* browser reset */
+  margin-bottom: var(--baseline); /* browser reset */
+}
+
+small,
+.text_small {
+  font-size: 0.8em; /* 12.8px */
+}
+
+.selection, /* storybook */
+::selection {
+  background: var(--cherry); /* WebKit/Blink Browsers */
+}
+
+address {
+  /* revert from browser styles currently used in the footer */
+  font-style: unset;
+}
+
+code {
+  white-space: break-spaces;
+  background: var(--brilliance);
+  padding: 1rem;
+  line-height: 1.5em;
+}
+
+hr {
+  margin: 1.25rem auto; /* ? why 1.25 */
+  border-top: 0;
+  border-bottom: 1px solid var(--tin-soldier);
+}
+
+blockquote {
+  margin: 0;
+  color: var(--black-metal);
+  @media (prefers-color-scheme: dark) {
+    color: var(--brilliance);
+  }
+
+  /* TODO: type scale */
+  font-size: 2rem;
+  font-weight: bold;
+  /* ? I think this is a browser override? */
+  border-left: none;
+}
+
+blockquote:before {
+  /* quotation mark */
+  content: "\201C ";
+  font-family: var(--body-font-family);
+  font-weight: bold;
+  /* TODO hack this should be an em on the type scale */
+  font-size: 32px;
+  /* why so small? */
+  margin-right: 0.5rem;
+}
+
+blockquote p {
+  /* TODO: type scale */
+  font-size: 1.125em;
+}
+
+cite {
+  color: gray;
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+  /* I was having problems on small screens citing urls */
+  word-break: break-all;
+  @media (min-width: 40rem) {
+    word-break: normal; /* revert back when the small problem doesnt exsist */
+  }
+}
+
+/*--------------------------------------------------------------
+A11y Accessibility
+--------------------------------------------------------------*/
+
+.sr-only {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/*------------------------------------*/
+
+.text-center {
+  text-align: center;
+}
+
+/*------------------------------------*/
+/* #HR */
+/*------------------------------------*/
+
+.mega-hr {
+  border: 0.5rem solid var(--brilliance);
+
+  @media (min-width: 40rem) {
+    border-bottom-width: 1rem;
+  }
+}
+
+.mega-hr-primary {
+  border: 0.5rem solid var(--cherry);
+
+  @media (min-width: 40rem) {
+    border-bottom-width: 1rem;
+  }
+}
+
+.hero-hr {
+  width: 100%;
+  border-bottom: 4px solid var(--cherry);
+  /* I'll try this as a gradient soon */
+  /* Im using the grid gaps to push this where it needs to be */
+  margin: 0;
+}
+
+/*------------------------------------*/
+  /* #PAGINATION */
+/*------------------------------------*/
+
+/* TODO: tody this up into less styles */
+
+.pagination .prev,
+.pagination .next {
+  font-weight: bold;
+}
+
+.nav-previous,
+.nav-next {
+  font-weight: bold;
+}
+
+.post-navigation h2 {
+  text-transform: capitalize;
+}
+
+/*------------------------------------*/
+  /* #TITLE */
+/*------------------------------------*/
 
 .riley {
   /* guess and check */
@@ -21,5 +189,62 @@ h2 {
   /* guess and check */
   font-size: 17vw;
   color: white;
+  /* ? does this need non webkit? */
   -webkit-text-stroke: 0.2rem var(--cherry);
+  /* TODO: dark */
 }
+
+/*------------------------------------*/
+  /* #PAGE TITLE */
+/*------------------------------------*/
+
+.page-title {
+  font-size: var(--denali);
+  justify-self: start;
+  word-wrap: break-word;
+
+  @media (min-width: 40rem) {
+    font-size: var(--everest);
+  }
+}
+
+.front-page-titles {
+  text-align: center;
+  font-weight: bold;
+}
+
+.fp-box {
+  /* front page box these are the red areas behind clicks code and camera on the split levels */
+  background: var(--cherry);
+  color: var(--brilliance);
+}
+
+.single .site-title {
+  color: var(--black-metal);
+}
+
+.cat-title {
+  margin-top: 2rem;
+  font-size: var(--denali);
+
+  @media (min-width: 40rem) {
+    font-size: var(--everest);
+    }
+}
+
+.featured-category-title {
+  /* why is this and padding compressed? */
+  margin: 0.5em auto;
+  font-size: var(--denali);
+  /* ? global? */
+  border: 0.2em solid var(--cherry);
+  padding: 0.5em;
+  word-wrap: break-word;
+  text-align: center;
+
+  @media (min-width: 40rem) {
+    font-size: 6em; /* ? this is really large? */
+  }
+}
+
+/*------------------------------------*/

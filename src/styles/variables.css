@@ -78,7 +78,7 @@
 
   /* 🏔 Mountain Names as Font Sizing Defaults */
   /* TODO: have a nicer rythym for these */
-  /* (Highest by Continent) */
+  /* (7 summits Highest by Continent) */
   --everest: 3rem; /* 29,035ft Asia */
   --aconcagua: 2.5rem; /* 22,840ft South America */
   --denali: 2rem; /* 20,320ft North America */
@@ -102,17 +102,8 @@
   /* https://en.wikipedia.org/wiki/Forest */
   /*------------------*/
 
-  --floor: 1;
-  --understory: 2;
-  --canopy: 3;
   --emergent: 4;
+  --canopy: 3;
+  --understory: 2;
+  --floor: 1;
 }
-
-/*------------------*/
-/* #WIDTHS FOR MEDIA QUERIES */
-/*------------------*/
-
-/*
-TODO: media variables are sass
-$stork: 40rem;
-$pelican: 60rem; */

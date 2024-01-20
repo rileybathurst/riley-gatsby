@@ -2,7 +2,160 @@
   /* #MEDIA */
 /*------------------------------------*/
 
+img,
+video,
+figure {
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
 svg {
   width: 2rem;
   height: 2rem;
+  fill: currentColor;
+}
+
+/* Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css */
+svg:not(:root) {
+  /* thats a pretty strange selector is it right? */
+  overflow: hidden;
+}
+
+iframe {
+  /* just a little fallback color incase an embed doesnt load */
+  background: linen; /* TODO: variable */
+}
+
+/*------------------------------------*/
+
+.img-100,
+.img-100 img {
+  width: 100%;
+}
+
+/*------------------------------------*/
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  /* what was it before? */
+  position: relative; /* Align more nicely with capital letters */
+  top: -0.0625em;
+  /* doesnt this negate what comes before? */
+  vertical-align: middle;
+  width: 1em;
+}
+
+/*------------------------------------*/
+
+.overlaying-image {
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+  @media (prefers-color-scheme: dark) {
+    mix-blend-mode: screen;
+  }
+  /* why this number? */
+  z-index: var(--floor);
+}
+
+.category-overlaying-image {
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+  @media (prefers-color-scheme: dark) {
+    mix-blend-mode: screen;
+  }
+  z-index: 14; /* TODO: */
+  grid-row: 1;
+  grid-column: 1/4;
+}
+
+.custom-header-media img,
+.custom-header-media picture {
+  width: 100%;
+}
+
+/*------------------------------------*/
+/* #CAPTION */
+/*------------------------------------*/
+
+figcaption,
+.caption {
+  color: gray;
+  font-size: var(--kilimanjaro);
+  font-weight: bold;
+}
+
+.wp-caption,
+.gallery-caption {
+  color: gray;
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+.wp-caption .wp-caption-text {
+  margin: 1rem 0;
+}
+
+/*------------------------------------*/
+
+.category-thumbnail img:hover {
+  /* indication of a link */
+  opacity: 0.8;
+}
+
+.category-color-blocking {
+  background: var(--cherry);
+  mix-blend-mode: multiply;
+  z-index: 15;
+  grid-row: 1;
+  grid-column: 1/4;
+  transition: 300ms ease;
+
+  @media (min-width: 40rem) {
+    grid-column: 2/5;
+  }
+}
+
+.category-color-blocking:hover {
+  background: hsl(var(--cherry__base), var(--dull));
+}
+
+body.category-code {
+  /* needs to be on the body tag or a single article can be different to the page */
+
+  .category-overlaying-image {
+    filter: none;
+    mix-blend-mode: initial;
+  }
+
+  .category-color-blocking {
+    display: none;
+  }
+
+  .category-color-blocking:hover {
+    display: initial;
+    opacity: 0.5;
+  }
+
+  .article-thumbnail {
+    margin-top: 1rem * 3;
+  }
+
+  .page-title a {
+    color: var(--cherry);
+  }
+
+  .fp-header {
+    padding: 0;
+    grid-row: initial;
+
+    hr {
+      display: none;
+    }
+  }
 }

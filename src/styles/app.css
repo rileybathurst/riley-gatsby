@@ -3,20 +3,23 @@
 /*------------------*/
 
 @import "variables";
-@import "atoms";
-@import "molecules";
 @import "organisms";
 @import "layout";
 @import "pages";
+
 @import "typography";
+@import "colors";
 @import "ccc";
 @import "animation";
 @import "media";
+@import "links";
+@import "button";
+@import "lists";
+@import "form";
+@import "visibility";
 
 /* fancy menu coming from webpackbuild so it wont be needed long term */
 @import "menu";
-
-@import "riley";
 
 /* riley-webpack manually updated */
 /* did I ever need this its google material */
@@ -25,4 +28,5 @@
 /* this might end up overwriting some webpack so its after */
 @import "tryptych";
 
+@import "pages/index";
 @import "pages/blog";

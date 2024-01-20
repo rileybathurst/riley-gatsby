@@ -2,7 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import "./colors.css";
+import "../styles/variables.css";
+import "../styles/colors.css";
 
 function Palette({ palette }) {
   if (palette === "colors") {

@@ -1,0 +1,33 @@
+/*------------------------------------*/
+/* #BUTTON */
+/*------------------------------------*/
+
+a.button {
+  text-decoration: none;
+}
+
+button,
+.button {
+  /* [type="submit"] removed for material */
+  margin-bottom: 1rem;
+  background: var(--cherry);
+  border: none;
+  color: var(--brilliance);
+  font-weight: bold;
+  /* TODO: type scale */
+  font-size: 1.5em;
+  transition: var(--global-transition);
+  display: inline-block;
+
+  /* browser reset */
+  -webkit-appearance: none;
+
+  @media (min-width: 40rem) {
+    font-size: var(--denali);
+  }
+}
+
+button:hover,
+.button:hover {
+  background: hsl(var(--cherry__base), var(--dull));
+}

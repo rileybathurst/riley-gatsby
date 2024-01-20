@@ -101,55 +101,43 @@ const IndexPage = () => {
         </main>
       </div >
 
-      <div>
-        <h2 className="passage">Featured Projects</h2>
+      <div id="featured_project">
+        <h2 className="passage">Featured Project</h2>
         {blog.map((project) => (
-          <div
+          <article
             key={project.id}
             className="slab"
           >
-            <article>
-              <h2>
-                <Link to={`/projects/${project.slug.current}`}>
-                  {project.title}
-                </Link>
-              </h2>
+            <h2>
+              <Link to={`/projects/${project.slug.current}`}>
+                {project.title}
+              </Link>
+            </h2>
 
-              <div className="color-blocking">{/* stay gold*/}</div>
+            <div className="color-blocking">{/* stay gold*/}</div>
 
-              <GatsbyImage
-                image={project?.image?.asset?.gatsbyImageData || hero.image.asset.gatsbyImageData}
-                alt={project?.image?.asset?.alternativeText || hero.image.asset.altText}
-                className="hero"
-              />
+            <GatsbyImage
+              image={project?.image?.asset?.gatsbyImageData || hero.image.asset.gatsbyImageData}
+              alt={project?.image?.asset?.alternativeText || hero.image.asset.altText}
+              className="hero"
+            />
 
-              <p className="excerpt">
-                {project.excerpt}
-              </p>
+            <p className="excerpt">
+              {project.excerpt || "lorem ipsum dolor sit excerpt"}
+            </p>
 
-              {/* // TODO: if then put in what its features but only above heights // probably if it has an image */}
-              {/*               <aside className="trades">
-                {project.trades.map((trade) => (
-                  <div key={trade.id}>
-                    <Link to={`/trades/${trade.slug}`}>
-                      {trade.name}
-                    </Link>
-                  </div>
-                ))}
-              </aside> */}
-
+            {/* // TODO: date formating as words
               <aside className="dates">
-                {/* // TODO: date formating as words */}
-                {/* {project.start} - {project.finish} */}
+                {project.start} - {project.finish}
               </aside>
+            */}
 
-              <h3 className="explore">
-                <Link to={project.slug.current}>Explore {project.title}</Link>
-              </h3>
-            </article>
-          </div>
+            <h3 className="explore" >
+              <Link to={project.slug.current}>Explore {project.title}</Link>
+            </h3>
+          </article >
         ))}
-      </div>
+      </div >
 
       <Footer />
     </>

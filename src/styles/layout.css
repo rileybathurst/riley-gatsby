@@ -2,25 +2,54 @@
   /* #LAYOUT */
 /*------------------------------------*/
 
+body {
+  min-height: 100vh;
+  border: 0.25em solid;
+
+  @media (min-width: 40rem) {
+    border-width: 0.5rem;
+  }
+
+  @media (min-width: 60rem) {
+    border-width: 1rem;
+  }
+}
+
 main {
   max-width: var(--stork);
   margin-inline: auto;
   margin-block: var(--everest);
 }
 
+/*------------------------------------*/
+
+.mw-18em {
+  /* TODO: this should be renamed */
+  max-width: 18rem;
+  justify-self: center;
+}
+
+/* ? am I sure we are using this */
+.reading-width {
+  width: var(--condor);
+  margin: 0 auto;
+}
+
+/*------------------------------------*/
+
 .spine-border {
+  background: var(--cherry);
+  width: 1rem;
+  transition: 3s ease;
   grid-row: 1/3;
   grid-column: 1;
   /* over the top of categories on single */
-  z-index: 15;
+  z-index: var(--understory);
   justify-self: end;
 
-/*
-TODO: @extend was sass
-@media (min-width: $stork) {
-    grid-row: 1/3;
-    justify-self: start; // categories takes up that space as well
-  } */
+  @media (min-width: 40rem) {
+    justify-self: start; /* categories takes up that space as well */
+  }
 }
 
 /* even tho these are the same the names help keep them seperate */
@@ -61,25 +90,38 @@ TODO: media variables are sass
 /* 2.0 Header */
 /* -------------------------------------------------------------*/
 
+/*------------------------------------*/
+/* #HEADER */
+/*------------------------------------*/
+
 .site-header {
   width: 100%;
-  max-width: var(--pelican);
-  margin: 0 auto 1rem * 2 auto;
+  max-width: var(--albatross);
+  margin: 0 auto 2rem auto;
   display: grid;
-  grid-gap: 1rem;
   grid-template-columns: 2em 1fr 2em;
+  grid-gap: 1rem;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
+    grid-template-rows: 2em 1fr 2em; /* keep it tight up top with the header-logo */
     grid-template-columns: 2em 1fr 1fr 1fr 2em;
-    grid-template-rows: 2em 1fr 2em; // keep it tight up top with the header-logo
-  } */
+  }
 }
 
 .single-site-header {
   margin-right: 1rem;
   grid-template-columns: 1em 1fr;
+}
+
+.single .site-header {
+  @media (min-width: 40rem) {
+    grid-template-rows: initial;
+    grid-template-columns: 2em 1fr;
+  }
+}
+
+.single-site-header {
+  grid-template-rows: none !important;
 }
 
 .breadcrumbs {
@@ -91,11 +133,10 @@ TODO: media variables are sass
 
 .single .breadcrumbs {
   grid-row: 3;
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+
+  @media (min-width: 40rem) {
     grid-row: 3/5;
-  } */
+  }
 }
 
 .header-logo {
@@ -104,11 +145,9 @@ TODO: media variables are sass
   /* macth the spine */
   justify-self: center;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    align-self: end; // this is for when the menu is horizontal on single pages
-    grid-column: 5; //category
+  @media (min-width: 40rem) {
+    align-self: end; /* this is for when the menu is horizontal on single pages */
+    grid-column: 5; /* category */
   } */
 }
 
@@ -152,48 +191,63 @@ TODO: media variables are sass
   } */
 }
 
+.single-header-top-line {
+  grid-row: 1;
+  grid-column: 2;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: 40rem) {
+    flex-direction: row;
+
+    h1 {
+      margin-bottom: 0; /* help these align */
+    }
+  }
+}
+
 /*--------------------------------------------------------------
-2.1 Site Branding Text
+  Site Branding Text
 --------------------------------------------------------------*/
 
 .site-branding-text {
   grid-row: 2;
   grid-column: 2;
-  z-index: 20;
-/* TODO: media variables are sass
-  @media (min-width: $stork) {
+  z-index: 20; /* TODO: */
+
+  @media (min-width: 40rem) {
     writing-mode: vertical-rl;
     grid-row: 1/4;
     grid-column: 3;
     place-self: center;
-  } */
+  }
 }
 
 .single .site-branding-text {
+  background: initial;
+  mix-blend-mode: initial;
   grid-row: 1;
   /* fix problems caused by the home page */
-  justify-self: start;
+  place-self: start;
   padding-bottom: 0;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     writing-mode: horizontal-tb;
     padding: 0;
     grid-column: 2;
-    margin-top: 0; // ! single needs the margin but we dont here
-    margin-bottom: 0; // this was -.25em but I think I've fixed that hack to pull it to the baseline
-  } */
+    margin-top: 0; /* ! single needs the margin but we dont here */
+    margin-bottom: 0; /* this was -.25em but I think I've fixed that hack to pull it to the baseline */
+  }
 }
 
 .home .site-branding-text {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-row: 1 / 3;
-    margin-top: 1rem * 3;
-    margin-bottom: 1rem; // can this be written as a single line?
-  } */
+    margin-block: 3rem 1rem;
+  }
 }
 
 .spine {
@@ -292,33 +346,6 @@ TODO: media variables are sass
 
 .single .navigation-top {
   grid-row: 3;
-
-/* 
-TODO: media variables are sass
-@media (min-width: $stork) {
-    grid-column: 2;
-
-    ul {
-      // display: flex;
-      // I think the grid is going to be easier to keep the spacing perfect with other parts of the page
-      margin-top: 0; // browser reset
-      padding: 0;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 1rem;
-    }
-
-    li {
-      margin-bottom: 0;
-      // margin-right: 1rem;
-      padding-right: 1rem; // does making this padding solve my js finding the width problems?
-    }
-
-    li:last-child() {
-      margin-right: 0;
-    }
-  } */
 }
 
 /*--------------------------------------------------------------
@@ -370,21 +397,14 @@ TODO: media variables are sass
 .category-sub ul {
   padding-left: 0;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    display: grid;
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); // this is probably far too simple and should be a flex
-    grid-gap: 1rem;
-  } */
-
   li {
     list-style: none;
     text-align: center;
   }
+}
+
+.category-break {
+  margin-bottom: 3rem;
 }
 
 /*--------------------------------------------------------------
@@ -513,28 +533,6 @@ TODO: media variables are sass
 .article-category {
   grid-column: 2;
   font-weight: bold;
-/* TODO: media variables are sass
-  @media (min-width: $stork) {
-    text-align: right;
-    grid-row: 1 / 3;
-    grid-column: 1;
-    writing-mode: vertical-rl;
-    align-self: start;
-    justify-self: center;
-    overflow-x: scroll;
-    max-height: 45em; // incase of a long category name it will truncate
-    margin-top: 1rem;
-
-    p,
-    ul {
-      margin: 0; // vertical text removes margins
-    }
-
-    ul {
-      padding-left: 0; // browser reset
-      padding-top: 1rem; // browser alter
-    }
-  } */
 
   & p {
     display: inline-block;
@@ -618,12 +616,6 @@ TODO: media variables are sass
   list-style-type: none;
   margin-left: 0;
   padding: 0;
-
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    margin-bottom: 0;
-  } */
 }
 
 .article-explore {
@@ -1002,19 +994,10 @@ TODO: media variables are sass
   grid-gap: 1rem;
   max-width: var(--albatross);
   margin-inline: auto;
+  padding-inline: 1rem;
 
   & address {
     grid-column: 3;
-  }
-}
-
-.footer_info div,
-address {
-  /* step back with the grid gap fill */
-  background: var(--kingly-cloud);
-  @media (prefers-color-scheme: dark) {
-    /* TODO: this should be made a variable */
-    background: #2c2c2c;
   }
 }
 
@@ -1024,36 +1007,6 @@ address {
 
 .footer_nav a {
   padding: 0;
-}
-
-.footer_info {
-  /* this is a way of filling the grip gap as a different color */
-  background: var(
-    --brilliance
-  );
-  @media (prefers-color-scheme: dark) {
-    background: var(--black-metal);
-  }
-}
-
-.footer_copyright,
-.footer_nav,
-.footer_contact {
-  padding: 1rem;
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    grid-row: 1;
-    z-index: 10;
-  } */
-}
-
-.footer_nav {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    grid-column: 3;
-  } */
 }
 
 .footer_nav ul {
@@ -1070,6 +1023,10 @@ TODO: media variables are sass
   @media (min-width: $stork) {
     grid-column: 4;
     text-align: right;
+  }
+
+  p {
+    margin-block-end: 1rem;
   }
 }
 
@@ -1219,10 +1176,7 @@ TODO: media variables are sass
   margin: 0;
 }
 
-.reading-width {
-  width: var(--condor);
-  margin: 0 auto;
-}
+
 
 /* TODO: Name */
 /*------------------*/
@@ -1287,71 +1241,6 @@ TODO: media variables are sass
     grid-column: 2;
     grid-row: 1;
     aspect-ratio: 16/9;
-  }
-}
-
-/*------------------*/
-/* #SLAB */
-/*------------------*/
-
-.slab {
-  background: var(--kingly-cloud);
-
-  article {
-    max-width: var(--albatross);
-    margin-inline: auto;
-    display: grid;
-    column-gap: 0.75rem;
-    row-gap: var(--baseline);
-
-    padding-block-start: 2rem;
-
-    grid-template-columns: 2em 1fr 2em;
-
-    h2 {
-      grid-row: 1;
-      grid-column: 2;
-      z-index: var(--emergent);
-      align-self: end;
-
-      a {
-        color: white;
-      }
-    }
-
-    .hero {
-      grid-row: 1;
-      grid-column: 2;
-      filter: grayscale(100%);
-    }
-
-    .color-blocking {
-      grid-row: 1;
-      grid-column: 2;
-      z-index: var(--canopy);
-    }
-
-    .excerpt {
-      grid-row: 2;
-      grid-column: 2;
-    }
-
-    .explore {
-      grid-row: 3;
-      grid-column: 2;
-    }
-
-    .trades {
-      grid-row: 1/3;
-      grid-column: 1;
-      writing-mode: vertical-rl;
-    }
-
-    .dates {
-      grid-row: 1/3;
-      grid-column: 3;
-      writing-mode: vertical-rl;
-    }
   }
 }
 

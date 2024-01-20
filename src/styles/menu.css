@@ -1,7 +1,8 @@
-/*--------------------------------------------------------------
-	Additional Fancy mani menu sliders
-  // https://codepen.io/rm/pen/ldhon
---------------------------------------------------------------*/
+/*------------------------------------*/
+  /* #MENU */
+  /* Additional Fancy mani menu sliders */
+  /* https://codepen.io/rm/pen/ldhon */
+/*------------------------------------*/
 
 /*
   which pages have a vertical menu stack
@@ -9,6 +10,14 @@
   Category
   page
 */
+
+.menu,
+.menu > ul,
+.menu > ul > li {
+  list-style-type: none;
+}
+
+/*------------------------------------*/
 
 .home #top-menu,
 .category #top-menu,
@@ -21,21 +30,21 @@ TODO: media variables are sass
     min-height: 10rem;
   } */
 
-  & a {
+  a {
     width: 100%;
     display: block;
   }
 
-  & a:hover {
+  a:hover {
     text-decoration: none;
     display: block;
   }
 
-  & li {
+  li {
     list-style: none;
   }
 
-  & li:first-child:hover ~ hr {
+  li:first-child:hover ~ hr {
     /* weird backwards math */
     margin-top: -6rem;
     opacity: 1;
@@ -95,28 +104,28 @@ TODO: media variables are sass
 
   display: inline;
 
-  & a:hover {
+  a:hover {
     text-decoration: none;
   }
 
-  & li {
+  li {
     display: inline-block;
   }
 
-  & li:first-child:hover ~ hr {
+  li:first-child:hover ~ hr {
     margin-left: 0;
     opacity: 1;
   }
 
-  & li:nth-child(2):hover ~ hr {
+  li:nth-child(2):hover ~ hr {
     opacity: 1;
   }
 
-  & li:nth-child(3):hover ~ hr {
+  li:nth-child(3):hover ~ hr {
     opacity: 1;
   }
 
-  & hr {
+  hr {
     height: 1rem;
     margin: 0;
     /* sit in the grid gap */
@@ -126,4 +135,12 @@ TODO: media variables are sass
     border: none;
     transition: 0.3s ease-in-out;
   }
+}
+
+.menu li {
+  margin-right: 1rem;
+}
+
+.menu li:last-child {
+  margin-right: 0;
 }
