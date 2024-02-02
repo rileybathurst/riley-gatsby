@@ -8,7 +8,7 @@
   padding-block-end: 0;
   padding-inline-start: 0;
 
-  @media (min-width: $stork) {
+  @media (min-width: 40rem) {
     flex-direction: row;
   }
 
@@ -22,7 +22,7 @@
   line-height: 3rem;
   overflow-y: hidden;
 
-  @media (min-width: $stork) {
+  @media (min-width: 40rem) {
     /* TODO: same as the line height so make it a variable */
     height: 4rem;
     margin-block-end: var(--global-margin);
@@ -134,4 +134,10 @@ css slidesshow in Rileys google drive can do all the math
 }
 .cfimg picture:nth-of-type(5) {
   animation-delay: 0;
+}
+
+/*------------------------------------*/
+
+.spine-border {
+  transition: 3s ease;
 }

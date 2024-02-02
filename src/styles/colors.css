@@ -2,6 +2,7 @@
   /* #COLORS */
 /*------------------------------------*/
 
+.body, /* storybook */
 body {
   border-color: var(--brilliance);
   margin: 0;
@@ -17,16 +18,16 @@ body {
   /* #BACKGROUNDS */
 /*------------------------------------*/
 
+/* change the name */
+.background-primary {
+  background: var(--cherry);
+}
+
 .background-clean {
   background: var(--brilliance);
   @media (prefers-color-scheme: dark) {
     background: var(--black-metal);
   }
-}
-
-/* change the name */
-.background-primary {
-  background: var(--cherry);
 }
 
 .background-dirty {
@@ -57,7 +58,6 @@ body {
 /* #HEADER */
 /*------------------------------------*/
 
-
 .header-logo {
   fill: var(--cherry);
 }
@@ -76,7 +76,8 @@ body {
 .site-branding-text {
   writing-mode: vertical-rl;
   justify-self: center;
-  /* adding this incase we dont have images the text is still visible // true black not var(--black-metal) for the screen blend to not show anything */
+  /* adding this incase we dont have images the text is still visible */
+  /* true black not var(--black-metal) for the screen blend to not show anything */
   background: var(--black-metal);
 
   a {
@@ -100,6 +101,10 @@ body {
       color: var(--brilliance);
     }
   }
+}
+
+.spine-border {
+  background: var(--cherry);
 }
 
 /*------------------------------------*/

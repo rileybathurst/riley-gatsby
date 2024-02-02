@@ -6,17 +6,16 @@
   /* TODO: type scale */
   font-size: 2em;
   font-weight: bold;
-  /* TODO padding: 1rem/2; // fit to the button */
+  /* TODO padding: 1rem/2; fit to the button */
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 
   /* max-width wasn't fixing the problem */
   width: 100%;
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+
+  @media (min-width: 40rem) {
     width: auto;
-  } */
+  }
 }
 
 .searchform [type="text"]:focus {

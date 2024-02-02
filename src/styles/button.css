@@ -8,7 +8,6 @@ a.button {
 
 button,
 .button {
-  /* [type="submit"] removed for material */
   margin-bottom: 1rem;
   background: var(--cherry);
   border: none;

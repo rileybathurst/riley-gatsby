@@ -57,6 +57,12 @@ export const Colors = ({ primary }) => {
         <h2>Neutrals Palette</h2>
         <Palette palette="neutrals" />
       </section>
+
+      <hr />
+
+      <div className='body'>
+        body
+      </div>
     </div>
   );
 };

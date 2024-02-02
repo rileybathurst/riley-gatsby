@@ -111,7 +111,7 @@ a::selection {
   @extend button; */
   margin-bottom: 0;
 
-  @media (min-width: $stork) {
+  @media (min-width: 40rem) {
     text-align: right;
   }
 }
@@ -119,4 +119,8 @@ a::selection {
 /* TODO: this isnt how links look */
 .featured-subheader a {
   color: gray;
+}
+
+.primary-menu a {
+  text-decoration: none;
 }

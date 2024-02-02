@@ -10,7 +10,12 @@ export const Typography = ({ primary }) => {
   return (
     <>
       Typography<br />
-      Body Font Family<br />
+      <p>Body Font Family</p>
+      <p className='code-font'>
+        <code>
+          code-font
+        </code>
+      </p>
 
       <h1>everest</h1>
       <h2>aconcagua</h2>

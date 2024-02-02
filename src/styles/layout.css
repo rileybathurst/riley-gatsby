@@ -4,7 +4,7 @@
 
 body {
   min-height: 100vh;
-  border: 0.25em solid;
+  border: 0.25em solid; /* ? color */
 
   @media (min-width: 40rem) {
     border-width: 0.5rem;
@@ -23,24 +23,8 @@ main {
 
 /*------------------------------------*/
 
-.mw-18em {
-  /* TODO: this should be renamed */
-  max-width: 18rem;
-  justify-self: center;
-}
-
-/* ? am I sure we are using this */
-.reading-width {
-  width: var(--condor);
-  margin: 0 auto;
-}
-
-/*------------------------------------*/
-
 .spine-border {
-  background: var(--cherry);
   width: 1rem;
-  transition: 3s ease;
   grid-row: 1/3;
   grid-column: 1;
   /* over the top of categories on single */
@@ -61,12 +45,10 @@ main {
   /* I think this is a browser default */
   justify-self: start;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    grid-row: 1/4; // what are the 6: header : date : content
-    justify-self: start; // categories takes up that space as well
-  } */
+@media (min-width: 40rem) {
+    grid-row: 1/4; /* what are the 6: header : date : content */
+    justify-self: start; /* categories takes up that space as well */
+  }
 }
 
 .passage {
@@ -86,58 +68,9 @@ TODO: media variables are sass
   }
 }
 
-/*--------------------------------------------------------------
-/* 2.0 Header */
-/* -------------------------------------------------------------*/
-
 /*------------------------------------*/
 /* #HEADER */
 /*------------------------------------*/
-
-.site-header {
-  width: 100%;
-  max-width: var(--albatross);
-  margin: 0 auto 2rem auto;
-  display: grid;
-  grid-template-columns: 2em 1fr 2em;
-  grid-gap: 1rem;
-
-  @media (min-width: 40rem) {
-    grid-template-rows: 2em 1fr 2em; /* keep it tight up top with the header-logo */
-    grid-template-columns: 2em 1fr 1fr 1fr 2em;
-  }
-}
-
-.single-site-header {
-  margin-right: 1rem;
-  grid-template-columns: 1em 1fr;
-}
-
-.single .site-header {
-  @media (min-width: 40rem) {
-    grid-template-rows: initial;
-    grid-template-columns: 2em 1fr;
-  }
-}
-
-.single-site-header {
-  grid-template-rows: none !important;
-}
-
-.breadcrumbs {
-  grid-column: 1;
-  grid-row: 2 / 4;
-  writing-mode: vertical-rl;
-  justify-self: center;
-}
-
-.single .breadcrumbs {
-  grid-row: 3;
-
-  @media (min-width: 40rem) {
-    grid-row: 3/5;
-  }
-}
 
 .header-logo {
   grid-row: 1;
@@ -148,18 +81,16 @@ TODO: media variables are sass
   @media (min-width: 40rem) {
     align-self: end; /* this is for when the menu is horizontal on single pages */
     grid-column: 5; /* category */
-  } */
+  }
 }
 
 .home .header-logo {
   justify-self: center;
   align-self: start;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-column: 5;
-  } */
+  }
 }
 
 .single .header-logo {
@@ -177,18 +108,17 @@ TODO: media variables are sass
   mix-blend-mode: multiply;
   background: var(--cherry);
   /* same as .spine border? should it be above or below */
-  z-index: 15;
+  z-index: var(--floor);
 }
 
 .header-color-blocking {
   /* TODO: @extend was sass @extend .color-blocking; */
   grid-row: 2;
   grid-column: 2;
-/* TODO: media variables are sass
-  @media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-row: 1 / 4;
     grid-column: 3;
-  } */
+  }
 }
 
 .single-header-top-line {
@@ -256,23 +186,20 @@ TODO: media variables are sass
   writing-mode: vertical-rl;
   /* match header-logo */
   justify-self: center;
-/* 
-TODO: media variables are sass
-  @media (min-width: $stork) {
+
+  @media (min-width: 40rem) {
     grid-row: 2;
     grid-column: 5;
-  } */
+  }
 }
 
 .single .spine {
   grid-row: 1/3;
   align-self: end;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 3;
-  } */
+  }
 }
 
 .custom-header-media,
@@ -282,12 +209,10 @@ TODO: media variables are sass
   grid-row: 1 / 3;
   grid-column: 2;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-row: 2;
     grid-column: 2 / 4;
-  } */
+  }
 
   img,
   picture {
@@ -303,11 +228,9 @@ TODO: media variables are sass
   padding-bottom: 56.25%;
   height: 0;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 2 / 4;
-  } */
+  }
 }
 
 .custom-header-featured-video iframe {
@@ -320,12 +243,10 @@ TODO: media variables are sass
 
 .single #top-menu {
   margin: 0;
-/* 
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     display: flex;
     flex-direction: row;
-  } */
+  }
 }
 
 /*------------------------------------*\
@@ -336,12 +257,10 @@ TODO: media variables are sass
   grid-column: 2;
   grid-row: 3;
 
-/* 
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 4;
     grid-row: 2 / 4;
-  } */
+  }
 }
 
 .single .navigation-top {
@@ -368,22 +287,19 @@ TODO: media variables are sass
 .cat-head {
   grid-column: 2 / 5;
   padding-bottom: 1rem * 2;
-/* 
-TODO: media variables are sass
-@media (min-width: $stork) {
-    // grid-column: 3;
-  } */
+
+  @media (min-width: 40rem) {
+    grid-column: 3;
+  }
 }
 
 .category-thumbnail {
   grid-column: 2 / 5;
   grid-row: 1 / 2;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-row: 1;
-  } */
+  }
 }
 
 .category-sub {
@@ -414,34 +330,28 @@ TODO: media variables are sass
   /* running wordpress post class prevents using a straight class */
   /* this can now be named */
 
-  max-width: 77rem;
+  max-width: var(--albatross);
   margin: 0 auto;
   display: grid;
   grid-gap: 1rem;
-
-  padding: 1rem * 2 0;
+  padding: 2rem 0;
   /* the spine needs to get to the base of the area */
   padding-bottom: 0;
-
   grid-template-columns: 2em 1fr 2em;
 
-/* 
-TODO: media variables are sass
-@media (min-width: $stork) {
-    // width: calc(100% - 2rem); // slightly different so the sid bar fits
+@media (min-width: 40rem) {
+    width: calc(100% - 2rem); /* slightly different so the side bar fits */
     grid-template-columns: 2em 1fr 1fr 1fr 2em;
-  } */
+  }
 }
 
 .article-thumbnail {
   grid-row: 1;
   grid-column: 1/4;
   
-/* 
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-column: 2 / 5;
-  } */
+  }
 }
 
 .article-thumbnail a,
@@ -473,24 +383,22 @@ TODO: media variables are sass
   width: 100%;
   grid-column: 2;
   grid-row: 2;
-/* 
-TODO: media variables are sass
-  @media (min-width: $stork) {
+
+  @media (min-width: 40rem) {
     grid-column: 2 / 6;
-    grid-row: 2; // this is a repeat of above
-  } */
+    grid-row: 2; /* this is a repeat of above */
+  }
 }
 
 .article-speechbubble {
   grid-column: 2;
-/* 
-TODO: media variables are sass
-  @media (min-width: $stork) {
+
+  @media (min-width: 40rem) {
     grid-row: 1;
     grid-column: 5;
     align-self: start;
     justify-self: center;
-  } */
+  }
 }
 
 .article-speechbubble > .speeechbubble {
@@ -500,50 +408,43 @@ TODO: media variables are sass
 .article-content {
   grid-column: 2;
 
-/* 
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-column: 2/5;
-  } */
+  }
 }
 
-.article-content-specific {
-  /* single posts have more content in this block which is then held in by a foundation grid */
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+/* .article-content-specific {
+  single posts have more content in this block which is then held in by a foundation grid
+  @media (min-width: 40rem) {
     full width
     grid-column: 1/6;
-  } */
-}
+  }
+} */
 
 .article-content-specific img {
   width: 100%;
 }
 
 .article-content-specific hr {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    margin-left: 1rem * 3; // 2 for the page margins 1 for the grid gap
-    margin-right: 1rem * 3;
-  } */
+@media (min-width: 40rem) {
+    margin-inline: 3rem;
+  }
 }
 
 .article-category {
   grid-column: 2;
   font-weight: bold;
 
-  & p {
+  p {
     display: inline-block;
   }
 
-  & ul {
+  ul {
     padding-left: 1rem;
     display: inline;
   }
 
-  & li {
+  li {
     list-style: none;
     margin-right: 1rem;
     display: inline;
@@ -551,13 +452,11 @@ TODO: media variables are sass
 }
 
 .single .article-category {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    grid-row: 1 / 4; // header : date : content
+  @media (min-width: 40rem) {
+    grid-row: 1 / 4; /* header : date : content */
     align-self: start;
     grid-column: 1;
-  } */
+  }
 
   h3 {
     margin: 0;
@@ -574,7 +473,7 @@ TODO: media variables are sass
   margin-bottom: 0;
 /* 
 TODO: media variables are sass
-  @media (min-width: $stork) {
+  @media (min-width: 40rem) {
     display: grid;
     grid-template-columns: 2em 1fr 1fr 1fr 2em;
     grid-gap: 1rem;
@@ -582,12 +481,10 @@ TODO: media variables are sass
 }
 
 .base-explore {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-column: 1;
     writing-mode: vertical-rl;
-  } */
+  }
 }
 
 .base-tags {
@@ -595,20 +492,16 @@ TODO: media variables are sass
   grid-row: 3;
   writing-mode: vertical-rl;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-column: 5;
     grid-row: 1;
-  } */
+  }
 }
 
 .article-category .subheading {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     margin-bottom: 0;
-  } */
+  }
 }
 
 .article-category h3 ul,
@@ -622,13 +515,11 @@ TODO: media variables are sass
   grid-column: 2;
   margin-bottom: 1rem;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 2/5;
-  } */
+  }
 
-  & a {
+  a {
     background: var(--cherry);
     padding: 1rem;
     display: inline-block;
@@ -637,7 +528,7 @@ TODO: media variables are sass
     text-decoration: none;
   }
 
-  & a:hover {
+  a:hover {
     background: hsl(var(--cherry__base), var(--dull));
     /* otherwise this gets overwritten to the default a */
     color: var(
@@ -651,11 +542,9 @@ TODO: media variables are sass
 /* can the next few items be written nicer? */
 .post-navigation {
   grid-column: 2 / 5;
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 2;
-  } */
+  }
 }
 
 .article-comments {
@@ -665,27 +554,21 @@ TODO: media variables are sass
   /* TODO: @extend was sass */
   /* @extend .background-dirty; */
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 3;
-  } */
+  }
 }
 
 .article-tags {
   grid-column: 2 / 5;
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-column: 4;
-  } */
+  }
 
   h3 {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
       writing-mode: vertical-rl;
-    } */
+    }
   }
 }
 
@@ -697,11 +580,9 @@ TODO: media variables are sass
   z-index: 20;
   align-self: end;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 2 / 5;
-  } */
+  }
 }
 
 .category-post--header {
@@ -711,7 +592,7 @@ TODO: media variables are sass
 
   /* 
   TODO: media variables are sass
-  @media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-column: 2 / 5;
   } */
 }
@@ -740,11 +621,9 @@ TODO: media variables are sass
 .featured--excerpt {
   grid-column: 2;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 2/5;
-  } */
+  }
 }
 
 /*--------------------------------------------------------------
@@ -812,11 +691,9 @@ TODO: media variables are sass
   grid-row: 2;
   align-self: end;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 2;
-  } */
+  }
 }
 
 .single .article-header,
@@ -833,11 +710,9 @@ TODO: media variables are sass
 }
 
 .post-categories > li {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    margin-bottom: 0; // vertical text doesnt need a margin below
-  } */
+@media (min-width: 40rem) {
+    margin-bottom: 0; /* vertical text doesnt need a margin below */
+  }
 }
 
 .comment-reply-title {
@@ -846,11 +721,9 @@ TODO: media variables are sass
 }
 
 .post-navigation {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 2;
-  } */
+  }
 }
 
 .specific-grid {
@@ -859,31 +732,27 @@ TODO: media variables are sass
 /* 
 
 TODO: media variables are sass
-  @media (min-width: $stork) {
+  @media (min-width: 40rem) {
     display: grid;
     grid-template-columns: 2rem 1fr 1fr 1fr 2rem;
     grid-gap: 1rem;
   } */
 
   h3 {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
       grid-column: 2/5;
-    } */
+    }
   }
 }
 
 .subtitle {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 1;
     grid-row: 1;
     writing-mode: vertical-rl;
     text-decoration: line-through;
-    margin: 0; // vertical text doesnt have regular margins
-  } */
+    margin: 0; /* vertical text doesnt have regular margins */
+  }
 }
 
 .specific-grid__main-width {
@@ -891,11 +760,9 @@ TODO: media variables are sass
 }
 
 .continental {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-column: 2/5;
-  } */
+  }
 }
 
 .continental-2 {
@@ -911,19 +778,15 @@ TODO: media variables are sass
 }
 
 .west-medium {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 2;
-  } */
+  }
 }
 
 .east-medium {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-column: 3;
-  } */
+  }
 }
 
 .west-large {
@@ -944,11 +807,9 @@ TODO: media variables are sass
 
 .gr-1-m {
   /* this is really different from other classes? */
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-row: 1;
-  } */
+  }
 }
 
 /*--------------------------------------------------------------
@@ -960,7 +821,7 @@ TODO: media variables are sass
   margin: 0 auto 2rem auto;
   padding-bottom: 1rem;
 /* TODO: media variables are sass
-  @media (min-width: $stork) {
+  @media (min-width: 40rem) {
     margin-top: 1rem * 5; // guess and check
   } */
 }
@@ -996,7 +857,7 @@ TODO: media variables are sass
   margin-inline: auto;
   padding-inline: 1rem;
 
-  & address {
+  address {
     grid-column: 3;
   }
 }
@@ -1020,7 +881,7 @@ TODO: media variables are sass
 }
 
 .footer_contact {
-  @media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-column: 4;
     text-align: right;
   }
@@ -1036,30 +897,24 @@ TODO: media variables are sass
 
   display: none;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     display: initial;
     grid-row: 1;
-  } */
+  }
 }
 
 .footer_1 {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+@media (min-width: 40rem) {
     grid-row: 1;
-    grid-column: 1/3; // hide a grid-gap that is otherwise white
-  } */
+    grid-column: 1/3; /* hide a grid-gap that is otherwise white */
+  }
 }
 
 .footer_5 {
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  @media (min-width: 40rem) {
     grid-row: 1;
-    grid-column: 4/6; // hide a grid-gap that is otherwise white
-  } */
+    grid-column: 4/6; /* hide a grid-gap that is otherwise white */
+  }
 }
 
 /*------------------------------------*\
@@ -1110,73 +965,33 @@ TODO: media variables are sass
 .specific-overlaying__image-grid {
   display: grid;
 
-  & picture,
+  picture,
   .overlaying-image {
     grid-row: 1;
     grid-column: 1;
   }
 }
 
-.specific-grid__col-2 {
-  grid-column: 2;
-}
-
-.specific-grid__col-3 {
-  grid-column: 3;
-}
-
-.specific-grid__col-4 {
-  grid-column: 4;
-}
-
 .base-next__grid {
   display: grid;
 
-  & a, /* the image */
-  & h4, /* the title */
+  a, /* the image */
+  h4, /* the title */
   .color-blocking {
     grid-row: 1;
     grid-column: 1;
   }
 
-  & h4 {
+  h4 {
     place-self: center;
   }
 
-  & h4 a {
+  h4 a {
     color: var(--brilliance);
     z-index: 16;
     position: relative;
   }
 }
-
-.site-header-hero-hr {
-  grid-row: 2;
-  grid-column: 2;
-}
-
-/* these are a couple little design blocks */
-.single-site-header-color-block_1 {
-  grid-row: 1;
-  grid-column: 1;
-  background: var(--cherry);
-  width: 100%;
-  height: 4px;
-  margin: 0;
-  /* guess and check to line up with the top of the Text */
-  margin-top: 1rem;
-}
-
-.single-site-header-color-block_2 {
-  grid-row: 2;
-  grid-column: 1;
-  background: var(--cherry);
-  width: 100%;
-  height: 4px;
-  margin: 0;
-}
-
-
 
 /* TODO: Name */
 /*------------------*/
@@ -1261,12 +1076,10 @@ TODO: media variables are sass
   padding-top: 1rem;
   padding-bottom: 1rem;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
-    /* red text on brackets isnt a good sign does it need a prefix
+  @media (min-width: 40rem) {
+    /* red text on brackets isnt a good sign does it need a prefix */
     width: 3em;
-  } */
+  }
 }
 
 .social-icons svg {

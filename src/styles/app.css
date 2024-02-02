@@ -3,7 +3,6 @@
 /*------------------*/
 
 @import "variables";
-@import "organisms";
 @import "layout";
 @import "pages";
 
@@ -21,12 +20,10 @@
 /* fancy menu coming from webpackbuild so it wont be needed long term */
 @import "menu";
 
-/* riley-webpack manually updated */
-/* did I ever need this its google material */
-@import "bundle";
-
 /* this might end up overwriting some webpack so its after */
 @import "tryptych";
+
+@import "site-header";
 
 @import "pages/index";
 @import "pages/blog";

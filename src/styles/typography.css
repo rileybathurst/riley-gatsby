@@ -57,7 +57,9 @@ address {
   font-style: unset;
 }
 
+.code-font, /* storybook */
 code {
+  font-family: var(--code-font);
   white-space: break-spaces;
   background: var(--brilliance);
   padding: 1rem;
@@ -248,3 +250,19 @@ A11y Accessibility
 }
 
 /*------------------------------------*/
+
+.primary-menu .category {
+  margin-bottom: 0.5em;
+}
+
+.primary-menu .qualifier {
+  font-family: var(--code-font);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 1rem;
+
+  /* depending on the flex direction if I need a margin or not */
+  @media (min-width: 40rem) {
+    margin-left: 0;
+  }
+}

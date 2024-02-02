@@ -24,11 +24,10 @@
 .page #top-menu {
   /* pulling the hr up means we need to specify this */
   min-height: 9rem;
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  
+  @media (min-width: 40rem) {
     min-height: 10rem;
-  } */
+  }
 
   a {
     width: 100%;
@@ -48,22 +47,19 @@ TODO: media variables are sass
     /* weird backwards math */
     margin-top: -6rem;
     opacity: 1;
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  
+    @media (min-width: 40rem) {
       margin-top: -8rem;
-    } */
+    }
   }
 
   li:nth-child(2):hover ~ hr {
     margin-top: -3rem;
     opacity: 1;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+    @media (min-width: 40rem) {
       margin-top: -4rem;
-    } */
+    }
   }
 
   li:nth-child(3):hover ~ hr {
@@ -84,21 +80,14 @@ TODO: media variables are sass
     opacity: 0;
     height: 0.5rem;
 
-/*
-TODO: media variables are sass
-@media (min-width: $stork) {
+  /* @media (min-width: 40rem) {
       // width: 22%; // guess and check
       // max-width: 22rem; // guess and check
       height: 1rem;
       margin-top: -10rem; // start at the top makes more sense as thats where people come from
-    } // medium */
+    } */
   }
 }
-
-/*
-  which pages have a horizontal menu stack
-  single
-*/
 
 .single #top-menu {
 
@@ -137,10 +126,6 @@ TODO: media variables are sass
   }
 }
 
-.menu li {
+.menu li:not(:last-child) {
   margin-right: 1rem;
-}
-
-.menu li:last-child {
-  margin-right: 0;
 }
