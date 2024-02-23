@@ -1,4 +1,4 @@
-// ? possibly move this to gatsby node to have pagination
+// TODO: pagination
 
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
@@ -8,36 +8,36 @@ import Footer from "../components/footer"
 
 const StyleguidesPage = () => {
 
-  /*
-  TODO: build in sanity
-  const { allStrapiStyleguide } = useStaticQuery(graphql`
-      query {
-        allStrapiStyleguide {
-          nodes {
-            name
-            slug
-            id
+  const { allSanityStyleguide } = useStaticQuery(graphql`
+    query {
+      allSanityStyleguide {
+        nodes {
+          name
+          slug {
+            current
           }
+          id
         }
       }
-    `) */
+    }
+  `)
 
   return (
     <>
       <Header />
       <main>
         <h1>styleguides</h1>
-        {/* <ul>
+        <ul>
           {
-            allStrapiStyleguide.nodes.map(styleguides => (
+            allSanityStyleguide.nodes.map(styleguides => (
               <li key={styleguides.id}>
-                <Link to={`/styleguide/${styleguides.slug}`}>
+                <Link to={`/styleguide/${styleguides.slug.current}`}>
                   {styleguides.name}
                 </Link>
               </li>
             ))
           }
-        </ul> */}
+        </ul>
       </main>
       <Footer />
     </>

@@ -1,7 +1,57 @@
-/* const { createFilePath } = require(`gatsby-source-filesystem`);
+/* const path = require(`path`);
+// const { createFilePath } = require(`gatsby-source-filesystem`);
+
+const makeRequest = (graphql, request) =>
+  new Promise((resolve, reject) => {
+    // Query for nodes to use in creating pages.
+    resolve(
+      graphql(request).then((result) => {
+        if (result.errors) {
+          reject(result.errors);
+        }
+
+        return result;
+      })
+    );
+  }); // makeRequests
+
+// Create blog pages dynamically
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+
+  const getStylegiudes = makeRequest(
+    graphql,
+    `
+    {
+      allSanityStyleguide {
+        edges {
+          node {
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+    `
+  ).then((result) => {
+    result.data.allSanityStyleguide.edges.forEach(({ node }) => {
+      createPage({
+        path: `/styleguide/${node.slug.current}`,
+        component: path.resolve(`src/views/styleguide-view.tsx`),
+        context: {
+          slug: node.slug.current,
+        },
+      });
+    });
+  }); // .then(result)
+
+  // Query for blog nodes to use in creating pages.
+  return Promise.all([getStylegiudes]);
+}; */
 
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#onCreateNode
-exports.onCreateNode = ({ node, actions, getNode }) => {
+/* exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
