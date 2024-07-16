@@ -1,10 +1,10 @@
 a {
-  color: var(--cherry);
+  color: var(--cherry-100);
 }
 
 a:hover {
   text-decoration: line-through;
-  color: hsl(var(--cherry__base), var(--dull));
+  color: var(--cherry-300);
 }
 
 a::selection {
@@ -26,7 +26,7 @@ a::selection {
 .quote-footer a {
   /* why removing the indication of a link? */
   text-decoration: none;
-  color: var(--cherry);
+  color: var(--cherry-100);
 }
 
 .article-footer a:hover,
@@ -40,7 +40,7 @@ a::selection {
 }
 
 .category-titles a {
-  color: var(--cherry);
+  color: var(--cherry-100);
 }
 
 .category-titles a:hover {
@@ -62,7 +62,7 @@ a::selection {
 }
 
 .breadcrumbs a:hover {
-  color: var(--cherry);
+  color: var(--cherry-100);
   text-decoration: underline;
 }
 
@@ -71,14 +71,14 @@ a::selection {
 /*------------------------------------*/
 
 .pagination a {
-  color: var(--cherry);
+  color: var(--cherry-100);
   text-decoration: underline;
 }
 
 .pagination a:hover,
 .pagination .current {
   text-decoration: line-through;
-  color: var(--cherry);
+  color: var(--cherry-100);
   background: none;
 }
 

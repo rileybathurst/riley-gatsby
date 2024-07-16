@@ -6,9 +6,7 @@ export const Spacing = ({ primary }) => {
   const mode = primary ? 'storybook-Spacing--primary' : 'storybook-Spacing--secondary';
   return (
     <>
-      Spacing<br />
-      <br />
-      Baseline
+      Spacing
     </>
   );
 };

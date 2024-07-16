@@ -1,7 +1,7 @@
 /*------------------------------------*/
-  /* #MENU */
-  /* Additional Fancy mani menu sliders */
-  /* https://codepen.io/rm/pen/ldhon */
+/* #MENU */
+/* Additional Fancy mani menu sliders */
+/* https://codepen.io/rm/pen/ldhon */
 /*------------------------------------*/
 
 /*
@@ -22,9 +22,9 @@
 .home #top-menu,
 .category #top-menu,
 .page #top-menu {
-  /* pulling the hr up means we need to specify this */
+  /* * pulling the hr up means we need to specify this */
   min-height: 9rem;
-  
+
   @media (min-width: 40rem) {
     min-height: 10rem;
   }
@@ -47,14 +47,14 @@
     /* weird backwards math */
     margin-top: -6rem;
     opacity: 1;
-  
+
     @media (min-width: 40rem) {
       margin-top: -8rem;
     }
   }
 
   li:nth-child(2):hover ~ hr {
-    margin-top: -3rem;
+    margin-top: -var(--everest);
     opacity: 1;
 
     @media (min-width: 40rem) {
@@ -70,7 +70,7 @@
   hr {
     /* lets me remove width and defaults to 100% which absolute does not */
     position: sticky;
-    background: hsl(var(--cherry__base), var(--dull));
+    background: var(--cherry-300);
     border: none;
     transition: 0.3s ease-in-out;
     /* slide behind and dont get in the way of the hover */
@@ -78,19 +78,18 @@
     /* start at the top makes more sense as thats where people come from // this also causes the shape of the resting ul to be tiny */
     margin-top: -9rem;
     opacity: 0;
-    height: 0.5rem;
+    height: var(--kosciuszko);
 
-  /* @media (min-width: 40rem) {
+    /* @media (min-width: 40rem) {
       // width: 22%; // guess and check
-      // max-width: 22rem; // guess and check
-      height: 1rem;
+      // max-width: 2var(--denali); // guess and check
+      height: var(--vinson);
       margin-top: -10rem; // start at the top makes more sense as thats where people come from
     } */
   }
 }
 
 .single #top-menu {
-
   display: inline;
 
   a:hover {
@@ -115,17 +114,17 @@
   }
 
   hr {
-    height: 1rem;
+    height: var(--vinson);
     margin: 0;
     /* sit in the grid gap */
-    margin-bottom: -1rem;
+    margin-bottom: -var(--vinson);
     opacity: 0;
-    background: hsl(var(--cherry__base), var(--dull));
+    background: var(--cherry-300);
     border: none;
     transition: 0.3s ease-in-out;
   }
 }
 
 .menu li:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: var(--vinson);
 }

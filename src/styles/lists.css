@@ -9,7 +9,7 @@ ul {
 }
 
 li {
-  margin-bottom: 1rem;
+  margin-bottom: var(--vinson);
 }
 
 /*------------------------------------*/
@@ -22,7 +22,7 @@ li {
   font-size: var(--kilimanjaro);
   font-weight: bold;
   /* this has to be a padding otherwise you loose the hr on scroll between */
-  padding-block-start: 1rem;
+  padding-block-start: var(--vinson);
   margin-block-end: 0;
   list-style: none; /* this seems like its doubling down on .menu but was needed */
 
@@ -48,24 +48,24 @@ li {
 .category-sub li {
   a {
     font-weight: bold;
-    background: var(--cherry);
+    background: var(--cherry-100);
     color: var(--brilliance);
-    padding: 1rem;
+    padding: var(--vinson);
     display: block;
     text-decoration: none;
   }
 
   a:hover {
-    background: hsl(var(--cherry__base), var(--dull));
+    background: var(--cherry-300);
     text-decoration: line-through;
   }
 }
 
 .footer_menu li {
   a {
-    background: var(--cherry);
+    background: var(--cherry-100);
     color: var(--brilliance);
-    padding: 1rem;
+    padding: var(--vinson);
     text-decoration: none;
     /* fill the box */
     display: block;
@@ -75,6 +75,6 @@ li {
 
   a:hover {
     text-decoration: line-through;
-    background: hsl(var(--cherry__base), var(--dull));
+    background: var(--cherry-300);
   }
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { Spacing } from './Spacing';
 
 export default {
-  title: 'Spacing',
+  title: 'Atoms/Spacing',
   component: Spacing,
 };
 

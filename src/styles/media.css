@@ -1,5 +1,5 @@
 /*------------------------------------*/
-  /* #MEDIA */
+/* #MEDIA */
 /*------------------------------------*/
 
 img,
@@ -14,8 +14,8 @@ figure {
 }
 
 svg {
-  width: 2rem;
-  height: 2rem;
+  width: var(--denali);
+  height: var(--denali);
   fill: currentColor;
 }
 
@@ -90,26 +90,16 @@ figcaption,
   font-weight: bold;
 }
 
-.wp-caption,
-.gallery-caption {
-  color: gray;
-  font-style: italic;
-  margin-bottom: 1.5em;
-}
-
-.wp-caption .wp-caption-text {
-  margin: 1rem 0;
-}
-
 /*------------------------------------*/
 
 .category-thumbnail img:hover {
-  /* indication of a link */
+  /* TODO: Variable
+  so its an indication of a link */
   opacity: 0.8;
 }
 
 .category-color-blocking {
-  background: var(--cherry);
+  background: var(--cherry-100);
   mix-blend-mode: multiply;
   z-index: 15;
   grid-row: 1;
@@ -122,7 +112,7 @@ figcaption,
 }
 
 .category-color-blocking:hover {
-  background: hsl(var(--cherry__base), var(--dull));
+  background: var(--cherry-300);
 }
 
 body.category-code {
@@ -143,11 +133,11 @@ body.category-code {
   }
 
   .article-thumbnail {
-    margin-top: 1rem * 3;
+    margin-top: var(--everest);
   }
 
   .page-title a {
-    color: var(--cherry);
+    color: var(--cherry-100);
   }
 
   .fp-header {
@@ -190,10 +180,10 @@ body.category-code {
 
 .article-content-specific {
   grid-column: 2;
-  margin-bottom: 1rem;
+  margin-bottom: var(--vinson);
 
   @media (min-width: 40rem) {
     grid-column: 2 / 6;
-    margin-bottom: 3rem;
+    margin-bottom: var(--everest);
   }
 }

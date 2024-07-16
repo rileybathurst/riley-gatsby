@@ -3,7 +3,7 @@ import React from "react";
 import { Links } from "./Links";
 
 export default {
-  title: "Links",
+  title: "Atoms/Links",
   component: Links,
 };
 

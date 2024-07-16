@@ -11,7 +11,7 @@ export const Typography = ({ primary }) => {
     <>
       Typography<br />
       <p>Body Font Family</p>
-      <p className='code-font'>
+      <p className='storybook-code_font'>
         <code>
           code-font
         </code>
@@ -22,10 +22,10 @@ export const Typography = ({ primary }) => {
       <h3>denali</h3>
       <h4>kilimanjaro</h4>
       <h5>elbrus</h5>
-      <h6>vinson_massif</h6>
+      <h6>vinson</h6>
       <small>kosciuszko</small>
       <p>p</p>
-      <p>this text includes a <span className='selection'>selection</span> on a span</p>
+      <p>this text includes a <span className='storybook-selection'>selection</span> on a span</p>
       <p className='sr-only'>screen reader text</p>
       {/* TODO: */}
       <blockquote>

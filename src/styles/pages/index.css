@@ -1,19 +1,19 @@
 /*------------------*/
-  /* INDEX */
+/* INDEX */
 /*------------------*/
 
 #featured_project {
-  margin-block-end: 3rem;
+  margin-block-end: var(--everest);
 
   article {
     background: var(--kingly-cloud);
     max-width: var(--albatross);
     margin-inline: auto;
     display: grid;
-    column-gap: 0.75rem;
-    row-gap: var(--baseline);
+    column-gap: var(--kosciuszko);
+    row-gap: var(--kilimanjaro);
 
-    grid-template-columns: 2em 1fr 2em;
+    grid-template-columns: var(--denali) 1fr var(--denali);
 
     h2 {
       grid-row: 1;

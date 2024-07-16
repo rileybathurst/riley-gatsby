@@ -3,7 +3,7 @@ import React from 'react';
 import { Contrasts } from './Contrasts';
 
 export default {
-  title: 'Contrasts',
+  title: 'Atoms/Contrasts',
   component: Contrasts,
 };
 

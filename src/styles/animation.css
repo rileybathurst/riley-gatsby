@@ -1,5 +1,5 @@
 /*------------------*/
-  /* #ANIMATION */
+/* #ANIMATION */
 /*------------------*/
 
 .titleSpinner {
@@ -8,6 +8,7 @@
   padding-block-end: 0;
   padding-inline-start: 0;
 
+  /* TODO: 🦜 not a bird */
   @media (min-width: 40rem) {
     flex-direction: row;
   }
@@ -18,13 +19,14 @@
 }
 
 #changeText {
-  height: 2.5rem;
-  line-height: 3rem;
+  height: var(--denali);
+  line-height: var(--everest);
   overflow-y: hidden;
 
+  /* TODO: 🦜 not a bird */
   @media (min-width: 40rem) {
     /* TODO: same as the line height so make it a variable */
-    height: 4rem;
+    height: var(--everest);
     margin-block-end: var(--global-margin);
   }
 
@@ -67,7 +69,6 @@
 /*------------------------------------*/
 
 /* TODO: rename this */
-
 
 .cfimg {
   display: grid;

@@ -1,11 +1,14 @@
 // this is the Name.jsx file
-import React from 'react';
-import PropTypes from 'prop-types';
+// Change this to a site title but better name
+import React from "react";
+import PropTypes from "prop-types";
 
 export const Riley = ({ primary }) => {
-  const mode = primary ? 'storybookriley---primary' : 'storybookriley---secondary';
+  const mode = primary
+    ? "storybookriley---primary"
+    : "storybookriley---secondary";
   return (
-    <div className='riley-container'>
+    <div className="riley-container">
       <h2 className="riley">RILEY</h2>
     </div>
   );

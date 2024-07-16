@@ -22,15 +22,15 @@
   --black-out: hsl(0, 0%, 12.5%);
   --raven-black: hsl(0, 0%, 25%);
   --industrial-revolution: hsl(0, 0%, 37.5%);
-  /* gray */
+  /* grey */
   --cold-grey: hsl(0, 0%, 62.5%);
   --tin-soldier: hsl(0, 0%, 75%);
   --kingly-cloud: hsl(0, 0%, 87.5%);
   --brilliance: hsl(0, 0%, 97.5%);
 
-  /* kinda was primary color */
-  --cherry: hsl(0, 75%, 50%);
-  --cherry__base: 0, 75%;
+  --cherry-100: hsl(0, 75%, 50%);
+  --cherry-200: hsl(0, 75%, 37.5%);
+  --cherry-300: hsl(0, 75%, 25%);
 
   /*------------------*/
   /* #SHADOWS */
@@ -47,33 +47,37 @@
   /* #WIDTHS */
   /*------------------*/
 
-  --swan: 20rem;
-  --vulture: 30rem;
-  --stork: 40rem;
-  --condor: 50rem;
-  --pelican: 60rem;
+  --vulture: 10rem;
+  --stork: 18rem; /* 288px */
+  /* ? wheres my kinda default phone to ipad size */
+  --condor: 30rem;
+  --pelican: 50rem;
   --albatross: 80rem;
+
+  /* iphone 14 2532 x 1170 at 460 ppi */
+  /*  */
 
   /*------------------*/
   /* #TYPOGHRAPY */
+  /* 7 Summits */
   /*------------------*/
 
-  /* 24px */
-  --baseline: 1.5rem;
+  --everest: 3.5rem;
+  --aconcagua: 2.75rem;
+  --denali: 2rem;
+  --kilimanjaro: 1.5rem;
+  --elbrus: 1.25rem;
+  --vinson: 1rem;
+  --kosciuszko: 0.75rem;
 
-  /* 🏔 Mountain Names as Font Sizing Defaults */
-  /* TODO: have a nicer rythym for these */
-  /* (7 summits Highest by Continent) */
-  --everest: 3rem; /* 29,035ft Asia */
-  --aconcagua: 2.5rem; /* 22,840ft South America */
-  --denali: 2rem; /* 20,320ft North America */
-  --kilimanjaro: 1.5rem; /* 19,340ft Africa */
-  --elbrus: 1.25rem; /* 18,510ft Europe / Russia */
-  --vinson_massif: 1rem; /* 16,050ft Antartica */
-  --kosciuszko: 0.75rem; /* 7,310ft Australia */
+  /* TODO: Oops wrong metaphor */
+  /* https://www.discoverwildlife.com/animal-facts/birds/smallest-birds-in-the-world */
+  /* theres a bunch a bunch of hummingbirds */
+  --woodstar: 0.125em;
+  --weebill: 0.25em;
 
   /* TODO check the quotes */
-  --body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  --sans-font: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   --code-font: "Monaco", monospace;
 
   /*------------------*/

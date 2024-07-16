@@ -1,8 +1,9 @@
 /*------------------*/
-  /* #RILEY BATHURST */
+/* #RILEY BATHURST */
 /*------------------*/
 
 @import "variables";
+@import "resets";
 @import "layout";
 @import "pages";
 

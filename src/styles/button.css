@@ -8,8 +8,8 @@ a.button {
 
 button,
 .button {
-  margin-bottom: 1rem;
-  background: var(--cherry);
+  margin-bottom: var(--vinson);
+  background: var(--cherry-100);
   border: none;
   color: var(--brilliance);
   font-weight: bold;
@@ -21,6 +21,7 @@ button,
   /* browser reset */
   -webkit-appearance: none;
 
+  /* TODO: 🦜 not a bird */
   @media (min-width: 40rem) {
     font-size: var(--denali);
   }
@@ -28,5 +29,5 @@ button,
 
 button:hover,
 .button:hover {
-  background: hsl(var(--cherry__base), var(--dull));
+  background: var(--cherry-300);
 }

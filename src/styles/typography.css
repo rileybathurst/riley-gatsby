@@ -3,12 +3,18 @@
 /*------------------*/
 
 body {
-  font-family: var(--body-font-family);
+  font-family: var(--sans-font);
   font-size: 16px;
   line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin-block-start: 0; /* browser reset */
 }
 
@@ -18,38 +24,39 @@ h1 {
 }
 
 h2 {
-  font-size: var(--aconcagua)
+  font-size: var(--aconcagua);
 }
 
 h3 {
-  font-size: var(--denali)
+  font-size: var(--denali);
 }
 
 h4 {
-  font-size: var(--kilimanjaro)
+  font-size: var(--kilimanjaro);
 }
 
 h5 {
-  font-size: var(--elbrus)
+  font-size: var(--elbrus);
 }
 
-h6, p {
-  font-size: var(--vinson_massif)
+h6,
+p {
+  font-size: var(--vinson);
 }
 
 p {
   margin-top: 0; /* browser reset */
-  margin-bottom: var(--baseline); /* browser reset */
+  margin-bottom: var(--kilimanjaro); /* browser reset */
 }
 
 small,
 .text_small {
-  font-size: 0.8em; /* 12.8px */
+  font-size: var(--kosciuszko);
 }
 
-.selection, /* storybook */
+.storybook-selection,
 ::selection {
-  background: var(--cherry); /* WebKit/Blink Browsers */
+  background: var(--cherry-100); /* WebKit/Blink Browsers */
 }
 
 address {
@@ -57,17 +64,17 @@ address {
   font-style: unset;
 }
 
-.code-font, /* storybook */
+.storybook-code_font,
 code {
   font-family: var(--code-font);
   white-space: break-spaces;
   background: var(--brilliance);
-  padding: 1rem;
-  line-height: 1.5em;
+  padding: var(--vinson);
+  line-height: var(--kilimanjaro);
 }
 
 hr {
-  margin: 1.25rem auto; /* ? why 1.25 */
+  margin: var(--elbrus) auto;
   border-top: 0;
   border-bottom: 1px solid var(--tin-soldier);
 }
@@ -80,7 +87,7 @@ blockquote {
   }
 
   /* TODO: type scale */
-  font-size: 2rem;
+  font-size: var(--denali);
   font-weight: bold;
   /* ? I think this is a browser override? */
   border-left: none;
@@ -89,23 +96,23 @@ blockquote {
 blockquote:before {
   /* quotation mark */
   content: "\201C ";
-  font-family: var(--body-font-family);
+  font-family: var(--sans-font);
   font-weight: bold;
   /* TODO hack this should be an em on the type scale */
   font-size: 32px;
   /* why so small? */
-  margin-right: 0.5rem;
+  margin-right: var(--kosciuszko);
 }
 
 blockquote p {
   /* TODO: type scale */
-  font-size: 1.125em;
+  font-size: var(--elbrus);
 }
 
 cite {
   color: gray;
-  margin-left: 1rem;
-  margin-bottom: 1.5rem;
+  margin-left: var(--vinson);
+  margin-bottom: var(--kilimanjaro);
   /* I was having problems on small screens citing urls */
   word-break: break-all;
   @media (min-width: 40rem) {
@@ -134,31 +141,31 @@ A11y Accessibility
 /*------------------------------------*/
 
 .mega-hr {
-  border: 0.5rem solid var(--brilliance);
+  border: var(--kosciuszko) solid var(--brilliance);
 
   @media (min-width: 40rem) {
-    border-bottom-width: 1rem;
+    border-bottom-width: var(--vinson);
   }
 }
 
 .mega-hr-primary {
-  border: 0.5rem solid var(--cherry);
+  border: var(--kosciuszko) solid var(--cherry-100);
 
   @media (min-width: 40rem) {
-    border-bottom-width: 1rem;
+    border-bottom-width: var(--vinson);
   }
 }
 
 .hero-hr {
   width: 100%;
-  border-bottom: 4px solid var(--cherry);
+  border-bottom: 4px solid var(--cherry-100);
   /* I'll try this as a gradient soon */
   /* Im using the grid gaps to push this where it needs to be */
   margin: 0;
 }
 
 /*------------------------------------*/
-  /* #PAGINATION */
+/* #PAGINATION */
 /*------------------------------------*/
 
 /* TODO: tody this up into less styles */
@@ -178,13 +185,13 @@ A11y Accessibility
 }
 
 /*------------------------------------*/
-  /* #TITLE */
+/* #TITLE */
 /*------------------------------------*/
 
 .riley {
   /* guess and check */
   font-size: 31.4vw;
-  color: var(--cherry);
+  color: var(--cherry-100);
 }
 
 .bathurst {
@@ -192,12 +199,12 @@ A11y Accessibility
   font-size: 17vw;
   color: white;
   /* ? does this need non webkit? */
-  -webkit-text-stroke: 0.2rem var(--cherry);
+  -webkit-text-stroke: 0var (--denali) var(--cherry-100);
   /* TODO: dark */
 }
 
 /*------------------------------------*/
-  /* #PAGE TITLE */
+/* #PAGE TITLE */
 /*------------------------------------*/
 
 .page-title {
@@ -217,7 +224,7 @@ A11y Accessibility
 
 .fp-box {
   /* front page box these are the red areas behind clicks code and camera on the split levels */
-  background: var(--cherry);
+  background: var(--cherry-100);
   color: var(--brilliance);
 }
 
@@ -226,12 +233,12 @@ A11y Accessibility
 }
 
 .cat-title {
-  margin-top: 2rem;
+  margin-top: var(--denali);
   font-size: var(--denali);
 
   @media (min-width: 40rem) {
     font-size: var(--everest);
-    }
+  }
 }
 
 .featured-category-title {
@@ -239,7 +246,7 @@ A11y Accessibility
   margin: 0.5em auto;
   font-size: var(--denali);
   /* ? global? */
-  border: 0.2em solid var(--cherry);
+  border: 0var (--denali) solid var(--cherry-100);
   padding: 0.5em;
   word-wrap: break-word;
   text-align: center;
@@ -252,14 +259,14 @@ A11y Accessibility
 /*------------------------------------*/
 
 .primary-menu .category {
-  margin-bottom: 0.5em;
+  margin-bottom: var(--kosciuszko);
 }
 
 .primary-menu .qualifier {
   font-family: var(--code-font);
-  font-size: 1rem;
+  font-size: var(--vinson);
   font-weight: 400;
-  margin-left: 1rem;
+  margin-left: var(--vinson);
 
   /* depending on the flex direction if I need a margin or not */
   @media (min-width: 40rem) {

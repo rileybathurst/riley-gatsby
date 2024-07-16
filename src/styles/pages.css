@@ -1,12 +1,11 @@
 /* Search */
 
 .searchform [type="text"] {
-  border: 0.1em solid var(--tin-soldier);
+  border: 2px solid var(--tin-soldier);
   border-right: none;
   /* TODO: type scale */
-  font-size: 2em;
+  font-size: var(--denali);
   font-weight: bold;
-  /* TODO padding: 1rem/2; fit to the button */
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 
@@ -19,7 +18,7 @@
 }
 
 .searchform [type="text"]:focus {
-  outline: 0.1em solid var(--cherry);
+  outline: 2px solid var(--cherry-100);
 }
 
 /* 

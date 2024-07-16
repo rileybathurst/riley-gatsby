@@ -1,17 +1,18 @@
 /*------------------------------------*/
-  /* #LAYOUT */
+/* #LAYOUT */
 /*------------------------------------*/
 
 body {
   min-height: 100vh;
-  border: 0.25em solid; /* ? color */
+  /* ? color and small size */
+  border: var(--weebill) solid;
 
   @media (min-width: 40rem) {
-    border-width: 0.5rem;
+    border-width: var(--kosciuszko);
   }
 
   @media (min-width: 60rem) {
-    border-width: 1rem;
+    border-width: var(--vinson);
   }
 }
 
@@ -24,7 +25,7 @@ main {
 /*------------------------------------*/
 
 .spine-border {
-  width: 1rem;
+  width: var(--vinson);
   grid-row: 1/3;
   grid-column: 1;
   /* over the top of categories on single */
@@ -45,7 +46,7 @@ main {
   /* I think this is a browser default */
   justify-self: start;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-row: 1/4; /* what are the 6: header : date : content */
     justify-self: start; /* categories takes up that space as well */
   }
@@ -54,17 +55,17 @@ main {
 .passage {
   max-width: var(--pelican);
   margin-inline: auto;
-  padding-inline: 0.75rem;
+  padding-inline: var(--kosciuszko);
 }
 
 .progression {
   display: flex;
-  column-gap: 0.75rem;
+  column-gap: var(--kosciuszko);
   max-width: var(--pelican);
   flex-flow: row wrap;
 
   > * {
-    flex: 1 1 calc(var(--vulture) - 2rem);
+    flex: 1 1 calc(var(--vulture) - var(--denali));
   }
 }
 
@@ -106,7 +107,7 @@ main {
 
 .color-blocking {
   mix-blend-mode: multiply;
-  background: var(--cherry);
+  background: var(--cherry-100);
   /* same as .spine border? should it be above or below */
   z-index: var(--floor);
 }
@@ -164,19 +165,19 @@ main {
   place-self: start;
   padding-bottom: 0;
 
+  /* 🦜 not a bird */
   @media (min-width: 40rem) {
     writing-mode: horizontal-tb;
     padding: 0;
     grid-column: 2;
-    margin-top: 0; /* ! single needs the margin but we dont here */
-    margin-bottom: 0; /* this was -.25em but I think I've fixed that hack to pull it to the baseline */
+    margin-block: 0;
   }
 }
 
 .home .site-branding-text {
   @media (min-width: 40rem) {
     grid-row: 1 / 3;
-    margin-block: 3rem 1rem;
+    margin-block: var(--everest) var(--vinson);
   }
 }
 
@@ -197,7 +198,7 @@ main {
   grid-row: 1/3;
   align-self: end;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 3;
   }
 }
@@ -209,7 +210,7 @@ main {
   grid-row: 1 / 3;
   grid-column: 2;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-row: 2;
     grid-column: 2 / 4;
   }
@@ -224,11 +225,11 @@ main {
 .custom-header-featured-video {
   /* https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
   position: relative;
-   /* 16:9 */
+  /* 16:9 */
   padding-bottom: 56.25%;
   height: 0;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 2 / 4;
   }
 }
@@ -243,7 +244,7 @@ main {
 
 .single #top-menu {
   margin: 0;
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     display: flex;
     flex-direction: row;
   }
@@ -257,7 +258,7 @@ main {
   grid-column: 2;
   grid-row: 3;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 4;
     grid-row: 2 / 4;
   }
@@ -277,16 +278,17 @@ main {
 
 .category-header {
   /* inside the margins */
+  /* TODO: 🦜 not a bird */
   max-width: 77rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2em 1fr 1fr 1fr 2em;
-  grid-gap: 1rem;
+  grid-template-columns: var(--denali) 1fr 1fr 1fr var(--denali);
+  grid-gap: var(--vinson);
 }
 
 .cat-head {
   grid-column: 2 / 5;
-  padding-bottom: 1rem * 2;
+  padding-bottom: var(--denali);
 
   @media (min-width: 40rem) {
     grid-column: 3;
@@ -297,7 +299,7 @@ main {
   grid-column: 2 / 5;
   grid-row: 1 / 2;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-row: 1;
   }
 }
@@ -305,9 +307,9 @@ main {
 .category-sub {
   width: 100%;
   /* always stay inside the widest columns on the category pages */
-  max-width: 72rem;
+  max-width: var (--denali);
   margin: 0 auto;
-  margin-bottom: 1rem;
+  margin-bottom: var(--vinson);
 }
 
 .category-sub ul {
@@ -320,7 +322,7 @@ main {
 }
 
 .category-break {
-  margin-bottom: 3rem;
+  margin-bottom: var(--everest);
 }
 
 /*--------------------------------------------------------------
@@ -333,22 +335,22 @@ main {
   max-width: var(--albatross);
   margin: 0 auto;
   display: grid;
-  grid-gap: 1rem;
-  padding: 2rem 0;
+  grid-gap: var(--vinson);
+  padding: var(--denali) 0;
   /* the spine needs to get to the base of the area */
   padding-bottom: 0;
-  grid-template-columns: 2em 1fr 2em;
+  grid-template-columns: var(--denali) 1fr var(--denali);
 
-@media (min-width: 40rem) {
-    width: calc(100% - 2rem); /* slightly different so the side bar fits */
-    grid-template-columns: 2em 1fr 1fr 1fr 2em;
+  @media (min-width: 40rem) {
+    width: calc(100% - var(--denali));
+    grid-template-columns: var(--denali) 1fr 1fr 1fr var(--denali);
   }
 }
 
 .article-thumbnail {
   grid-row: 1;
   grid-column: 1/4;
-  
+
   @media (min-width: 40rem) {
     grid-column: 2 / 5;
   }
@@ -374,9 +376,10 @@ main {
 }
 
 .featured-header {
-  max-width: calc(77rem - 6rem);
-  margin: 1rem auto;
-  padding-top: 1rem;
+  /* TODO: this is weird */
+  max-width: calc(77 - 6rem);
+  margin: var(--vinson) auto;
+  padding-top: var(--vinson);
 }
 
 .article-header {
@@ -402,7 +405,7 @@ main {
 }
 
 .article-speechbubble > .speeechbubble {
-  margin-bottom: 1rem;
+  margin-bottom: var(--vinson);
 }
 
 .article-content {
@@ -413,21 +416,13 @@ main {
   }
 }
 
-/* .article-content-specific {
-  single posts have more content in this block which is then held in by a foundation grid
-  @media (min-width: 40rem) {
-    full width
-    grid-column: 1/6;
-  }
-} */
-
 .article-content-specific img {
   width: 100%;
 }
 
 .article-content-specific hr {
-@media (min-width: 40rem) {
-    margin-inline: 3rem;
+  @media (min-width: 40rem) {
+    margin-inline: var(--everest);
   }
 }
 
@@ -440,13 +435,13 @@ main {
   }
 
   ul {
-    padding-left: 1rem;
+    padding-left: var(--vinson);
     display: inline;
   }
 
   li {
     list-style: none;
-    margin-right: 1rem;
+    margin-right: var(--vinson);
     display: inline;
   }
 }
@@ -467,16 +462,16 @@ main {
 .article-base {
   max-width: var(--albatross);
   /* rewrite this as a single */
-  margin-top: 1rem * 3;
+  margin-top: var(--everest);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
-/* 
+  /* 
 TODO: media variables are sass
   @media (min-width: 40rem) {
     display: grid;
-    grid-template-columns: 2em 1fr 1fr 1fr 2em;
-    grid-gap: 1rem;
+    grid-template-columns: var(--denali) 1fr 1fr 1fr var(--denali);
+    grid-gap: var(--vinson);
   } */
 }
 
@@ -513,15 +508,15 @@ TODO: media variables are sass
 
 .article-explore {
   grid-column: 2;
-  margin-bottom: 1rem;
+  margin-bottom: var(--vinson);
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 2/5;
   }
 
   a {
-    background: var(--cherry);
-    padding: 1rem;
+    background: var(--cherry-100);
+    padding: var(--vinson);
     display: inline-block;
     color: var(--brilliance);
     font-weight: bold;
@@ -529,11 +524,9 @@ TODO: media variables are sass
   }
 
   a:hover {
-    background: hsl(var(--cherry__base), var(--dull));
+    background: var(--cherry-300);
     /* otherwise this gets overwritten to the default a */
-    color: var(
-      --brilliance
-    );
+    color: var(--brilliance);
   }
 
   /* I dont like the hover here but need to do actual work on it */
@@ -542,7 +535,7 @@ TODO: media variables are sass
 /* can the next few items be written nicer? */
 .post-navigation {
   grid-column: 2 / 5;
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 2;
   }
 }
@@ -550,11 +543,11 @@ TODO: media variables are sass
 .article-comments {
   grid-column: 2 / 5;
 
-  padding: 1rem;
+  padding: var(--vinson);
   /* TODO: @extend was sass */
   /* @extend .background-dirty; */
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 3;
   }
 }
@@ -566,7 +559,7 @@ TODO: media variables are sass
   }
 
   h3 {
-@media (min-width: 40rem) {
+    @media (min-width: 40rem) {
       writing-mode: vertical-rl;
     }
   }
@@ -580,7 +573,7 @@ TODO: media variables are sass
   z-index: 20;
   align-self: end;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 2 / 5;
   }
 }
@@ -621,7 +614,7 @@ TODO: media variables are sass
 .featured--excerpt {
   grid-column: 2;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 2/5;
   }
 }
@@ -631,19 +624,19 @@ TODO: media variables are sass
 --------------------------------------------------------------*/
 
 .pagination {
-  margin: 3rem auto;
+  margin: var(--everest) auto;
   max-width: var(--albatross);
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: var(--vinson);
   /* TODO: fix */
-  grid-template-columns: 2em 1fr 4fr 1fr 2em;
+  grid-template-columns: var(--denali) 1fr 4fr 1fr var(--denali);
 }
 
 .pagination h2 {
   /* as wordpress controls this we are using elements for the grid */
   grid-column: 1 / 3;
 
-/*
+  /*
 TODO: media variables are sass
 @media (min-width: $pelican) {
     grid-column: 3 / span 4;
@@ -659,7 +652,7 @@ TODO: media variables are sass
   /* is there a place-items for flex? */
   align-items: flex-start;
 
-/*
+  /*
 TODO: media variables are sass
 @media (min-width: $pelican) {
     grid-column: 3;
@@ -677,7 +670,7 @@ TODO: media variables are sass
 
 .pagination span,
 .pagination a {
-  margin-right: 1rem;
+  margin-right: var(--vinson);
 }
 
 /*--------------------------------------------------------------
@@ -691,7 +684,7 @@ TODO: media variables are sass
   grid-row: 2;
   align-self: end;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 2;
   }
 }
@@ -710,7 +703,7 @@ TODO: media variables are sass
 }
 
 .post-categories > li {
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     margin-bottom: 0; /* vertical text doesnt need a margin below */
   }
 }
@@ -721,7 +714,7 @@ TODO: media variables are sass
 }
 
 .post-navigation {
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 2;
   }
 }
@@ -729,24 +722,24 @@ TODO: media variables are sass
 .specific-grid {
   display: flex;
   flex-direction: column;
-/* 
+  /* 
 
 TODO: media variables are sass
   @media (min-width: 40rem) {
     display: grid;
-    grid-template-columns: 2rem 1fr 1fr 1fr 2rem;
-    grid-gap: 1rem;
+    grid-template-columns: var(--denali) 1fr 1fr 1fr var(--denali);
+    grid-gap: var(--vinson);
   } */
 
   h3 {
-@media (min-width: 40rem) {
+    @media (min-width: 40rem) {
       grid-column: 2/5;
     }
   }
 }
 
 .subtitle {
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 1;
     grid-row: 1;
     writing-mode: vertical-rl;
@@ -778,19 +771,19 @@ TODO: media variables are sass
 }
 
 .west-medium {
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 2;
   }
 }
 
 .east-medium {
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-column: 3;
   }
 }
 
 .west-large {
-/*
+  /*
 TODO: media variables are sass
 @media (min-width: $pelican) {
     grid-column: 2;
@@ -798,7 +791,7 @@ TODO: media variables are sass
 }
 
 .east-large {
-/*
+  /*
 TODO: media variables are sass
 @media (min-width: $pelican) {
     grid-column: 3;
@@ -807,7 +800,7 @@ TODO: media variables are sass
 
 .gr-1-m {
   /* this is really different from other classes? */
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-row: 1;
   }
 }
@@ -818,12 +811,8 @@ TODO: media variables are sass
 
 .site-footer {
   width: 100%;
-  margin: 0 auto 2rem auto;
-  padding-bottom: 1rem;
-/* TODO: media variables are sass
-  @media (min-width: 40rem) {
-    margin-top: 1rem * 5; // guess and check
-  } */
+  margin: 0 auto var(--denali) auto;
+  padding-bottom: var(--vinson);
 }
 
 .site-footer--browse {
@@ -833,7 +822,7 @@ TODO: media variables are sass
 
 .footer-background__step {
   /* this allows the grid gap to sit inside as a ruler and not break the edges */
-  padding: 1rem;
+  padding: var(--vinson);
 }
 
 .footer_menu {
@@ -841,8 +830,8 @@ TODO: media variables are sass
   /* start simple stack then go to direction. maybe this should be a flex */
   grid-template-columns: 1fr;
   /* TODO: columns and rows */
-  grid-gap: 1rem;
-  padding-top: 1rem;
+  grid-gap: var(--vinson);
+  padding-top: var(--vinson);
   padding-left: 0;
   max-width: var(--albatross);
 }
@@ -852,10 +841,10 @@ TODO: media variables are sass
   /* TODO: minmax stack for small */
   grid-template-columns: repeat(3, 1fr);
   /* TODO: columns and rows */
-  grid-gap: 1rem;
+  grid-gap: var(--vinson);
   max-width: var(--albatross);
   margin-inline: auto;
-  padding-inline: 1rem;
+  padding-inline: var(--vinson);
 
   address {
     grid-column: 3;
@@ -887,7 +876,7 @@ TODO: media variables are sass
   }
 
   p {
-    margin-block-end: 1rem;
+    margin-block-end: var(--vinson);
   }
 }
 
@@ -897,14 +886,14 @@ TODO: media variables are sass
 
   display: none;
 
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     display: initial;
     grid-row: 1;
   }
 }
 
 .footer_1 {
-@media (min-width: 40rem) {
+  @media (min-width: 40rem) {
     grid-row: 1;
     grid-column: 1/3; /* hide a grid-gap that is otherwise white */
   }
@@ -952,14 +941,14 @@ TODO: media variables are sass
   section {
     /* guess and check number to fit 3 */
     flex: 1 1 29%;
-    padding: 1rem;
+    padding: var(--vinson);
   }
 }
 
 .specific-full-picture img {
   background: var(--brilliance);
-  padding: 1rem;
-  width: calc(100% - 2rem);
+  padding: var(--vinson);
+  width: calc(100% - var(--denali));
 }
 
 .specific-overlaying__image-grid {
@@ -1000,9 +989,9 @@ TODO: media variables are sass
 
 .header__concept {
   display: grid;
-  grid-template-columns: 2rem 1fr 2rem;
+  grid-template-columns: var(--denali) 1fr var(--denali);
   place-items: center;
-  /* color: var(--cherry); */
+  /* color: var(--cherry-100); */
   font-weight: 700;
 
   > * {
@@ -1040,16 +1029,17 @@ TODO: media variables are sass
 
   .white {
     fill: white;
-    filter: blur(0.125rem);
+    filter: blur(var(--woodstar));
   }
 
+  /* TODO: rename this */
   .cherry {
     fill: transparent;
-    stroke: var(--cherry);
-    stroke-width: 0.125rem;
-    filter: blur(0.5rem);
-    padding-inline-start: 0.125rem;
-    padding-block-start: 0.125rem;
+    stroke: var(--cherry-100);
+    stroke-width: var(--woodstar);
+    filter: blur(var(--kosciuszko));
+    padding-inline-start: var(--woodstar);
+    padding-block-start: var(--woodstar);
   }
 
   .headshot {
@@ -1072,9 +1062,9 @@ TODO: media variables are sass
 }
 
 .social-icons svg {
-  width: 2em;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  width: var(--denali);
+  padding-top: var(--vinson);
+  padding-bottom: var(--vinson);
 
   @media (min-width: 40rem) {
     /* red text on brackets isnt a good sign does it need a prefix */
